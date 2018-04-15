@@ -15,14 +15,10 @@ if (chooseFont = "Roboto"):
 
 
 	label = myFont.render(text, 1, (red, green, blue))
-	    
+
 	surface.blit(label, (x, y))
-	        
+
 	pygame.display.flip()
- 
+
  #how to use
  #messageText("bob ate a dog",x,y,size,what surface,redlevel,greenlevel,bluelevel)
-
-
-
-

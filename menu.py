@@ -20,6 +20,6 @@ def main_menu():
 			if event.type == pygame.QUIT:
 				quit()
 		screen.fill(black)
-		messageText("Jim",100,100,100,screen,255,255,255)
+		messageText("Jim",100,100,100,screen,255,255,255,"Roboto")
 		pygame.display.update()
 main_menu()
