@@ -44,6 +44,25 @@ def main_menu():
 				if mainCount == 5:
 					mainCount = 0
 					print (mainCount)
+
+			#enter
+
+				if event.key == pygame.K_RETURN:
+					if mainCount == 0:#start
+						#import the game
+						pass
+					elif mainCount == 1:#Options
+						#import the game
+						pass
+					elif mainCount == 2:#help
+						#import the help
+						pass
+					elif mainCount == 3:
+						#credits
+						pass
+					elif mainCount ==4:
+						quit()
+
 #Start
 #Options
 #Help
