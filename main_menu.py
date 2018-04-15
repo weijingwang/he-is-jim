@@ -51,10 +51,9 @@ def main_menu():
 #Quit
 
 		screen.blit(menu_back,(0,0))
-		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto-Regular.ttf")
-		
+		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
+
 		button("start",0,0,200,50,False,screen)
 		pygame.display.update()
 
 main_menu()
-
