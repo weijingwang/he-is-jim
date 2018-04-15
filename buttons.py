@@ -8,7 +8,7 @@ darkgreen = ((0,100,0))
 white = ((255,255,255))
 black = ((0,0,0))
 gold = ((212,175,55))
-buttonFont = pygame.font.Font("Roboto-Regular.ttf",25)
+buttonFont = pygame.font.Font("assets/fonts/Roboto-Regular.ttf", 25)
 def text_objects(text, font, color):
 	textSurface = font.render(text, True, color)
 	return textSurface, textSurface.get_rect()
