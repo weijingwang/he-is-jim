@@ -5,7 +5,7 @@ def messageText(text,x,y,size,surface,red,green,blue,chooseFont):
 	# os.getcwd()
 	# os.chdir("roboto")
 	# fontPath = os.path.dirname(os.path.abspath("Roboto-Regular.ttf"))
-	# print (fontPath)
+	# print (fontPath)qeghry'hteihjegrwrnhpvfh07ghwruhte
 
 	if (chooseFont == "ComicSans"):
 		myFont = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", size)
