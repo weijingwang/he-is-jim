@@ -12,7 +12,7 @@ y = 600
 black = ((0,0,0))
 screen = pygame.display.set_mode((x,y))
 #font
-menu_back = pygame.image.load("assets/images/main-menu-back.png")
+menu_back = pygame.image.load("assets/images/main-menu-bkgd.png")
 
 
 #function for menu which you can call
