@@ -31,10 +31,18 @@ def main_menu():
 
 					mainCount = mainCount-1
 					print (mainCount)
+
+				if mainCount == -1:
+					mainCount = 4
+					print (mainCount)
 				if event.key == pygame.K_DOWN:
 
 					mainCount = mainCount +1
 
+					print (mainCount)
+
+				if mainCount == 5:
+					mainCount = 0
 					print (mainCount)
 #Start
 #Options
@@ -43,9 +51,10 @@ def main_menu():
 #Quit
 
 		screen.blit(menu_back,(0,0))
-		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
-
+		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto-Regular.ttf")
+		
 		button("start",0,0,200,50,False,screen)
 		pygame.display.update()
 
 main_menu()
+
