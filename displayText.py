@@ -13,7 +13,7 @@ def messageText(text,x,y,size,surface,red,green,blue,chooseFont):
 	elif (chooseFont == "Roboto"):
 		fontFile = "assets/fonts/Roboto-Regular.ttf"
 
-		myFont = pygame.font.Font(fontFile, size)
+	myFont = pygame.font.Font(fontFile, size)
 
 	label = myFont.render(text, 1, (red, green, blue))
 
