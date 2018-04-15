@@ -51,9 +51,28 @@ def main_menu():
 #Quit
 
 		screen.blit(menu_back,(0,0))
-		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
+		#messageText("Jim's Big Win",450,500,50,screen,255,255,255,"/Users/weijingwang/Documents/GitHub/he-is-jim\ local/assets/fonts/ComicSansMSRegular.ttf")#/assets/fonts/ComicSansMSRegular.ttf
+		messageText("Credits",325,30,40,screen,244,67,54,"ComicSans")
+		
+		button("Start",0,50,200,50,False,screen)
+		button("Options",0,100,200,50,False,screen)
+		button("Help",0,150,200,50,False,screen)
+		button("Credits",0,200,200,50,False,screen)
+		button("Quit",0,250,200,50,False,screen)
 
-		button("start",0,0,200,50,False,screen)
+		if mainCount == 0:
+			button("Start",0,50,200,50,True,screen)
+		elif mainCount == 1:
+			button("Options",0,100,200,50,True,screen)
+		elif mainCount ==2:
+			button("Help",0,150,200,50,True,screen)
+		elif mainCount ==3:
+			button("Credits",0,200,200,50,True,screen)
+		elif mainCount == 4:
+			button("Quit",0,250,200,50,True,screen)
+		else:
+			print (mainCount)
 		pygame.display.update()
 
 main_menu()
+
