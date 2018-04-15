@@ -22,8 +22,8 @@ def showCredits():
 			if event.type == pygame.QUIT:
 				quit()
 		screen.fill(black)
-		messageText("Credits",325,30,40,screen,244,67,54,"ComicSans")
-		messageText("Weijing Wang",270,100,40,screen,255,87,34,"ComicSans")
-		messageText("Kyler Chin",300,150,40,screen,255,152,0,"ComicSans")
+		messageText("Credits",325,30,40,screen,244,67,54,"/assets/fonts/ComicSansMSRegular.ttf")
+		messageText("Weijing Wang",270,100,40,screen,255,87,34,"/assets/fonts/ComicSansMSRegular.ttf")
+		messageText("Kyler Chin",300,150,40,screen,255,152,0,"/assets/fonts/ComicSansMSRegular.ttf")
 		pygame.display.update()
 showCredits()
