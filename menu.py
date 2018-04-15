@@ -22,5 +22,4 @@ def main_menu():
 		screen.fill(black)
 		messageText("Jim",100,100,100,screen,255,255,255)
 		pygame.display.update()
-
 main_menu()
