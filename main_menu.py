@@ -52,7 +52,7 @@ def main_menu():
 
 		screen.blit(menu_back,(0,0))
 		#messageText("Jim's Big Win",450,500,50,screen,255,255,255,"/Users/weijingwang/Documents/GitHub/he-is-jim\ local/assets/fonts/ComicSansMSRegular.ttf")#/assets/fonts/ComicSansMSRegular.ttf
-		messageText("Credits",325,30,40,screen,244,67,54,"ComicSans")
+		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
 		
 		button("Start",0,50,200,50,False,screen)
 		button("Options",0,100,200,50,False,screen)
