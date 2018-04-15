@@ -1,3 +1,2 @@
-#!/usr/bin/python3
-
-#we need this above above programs for python3
+####eeeeee
+"""Jim is a 27 year old man who does not have une femme to call his own. All he does now is sit in front of his computer each and every day and plays the game "fort knight". One day, when he is playing games in front of his computer, a magical "doge" appears on his keyboard and causes him to win the game. Jim becomes doge's first worshipper. As a reward for Jim becoming doge's first follower, doge gives Jim magical powers that allows him to fly. Doge tells Jim, if he can fly to the other world, without dying, he will become co-leader. But he warns Jim, that there are evil space rocks as obstacles. npniinfinnafafniafnjifaniojfaioiuhiihuf Jim gets what he wants includng a gril friend"""
