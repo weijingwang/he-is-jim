@@ -23,5 +23,6 @@ def showCredits():
 				quit()
 		screen.fill(black)
 		messageText("Credits",325,30,40,screen,244,67,54,"ComicSans")
+		messageText("Weijing Wang",200,100,20,screen,244,67,54,"ComicSans")
 		pygame.display.update()
 showCredits()
