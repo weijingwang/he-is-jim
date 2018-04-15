@@ -1,6 +1,5 @@
 import pygame
 import os
-from credits import *
 pygame.init()
 def messageText(text,x,y,size,surface,red,green,blue,chooseFont):
 	# os.getcwd()
