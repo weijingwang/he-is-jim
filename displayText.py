@@ -17,4 +17,4 @@ def messageText(text,x,y,size,surface,red,green,blue):
 	pygame.display.flip()
 
  #how to use
- #messageText("bob ate a dog",x,y,size,what surface,redlevel,greenlevel,bluelevel)
+ #messageText("bob ate a dog",x,y,size,what surface,redcolor,greencolor,bluecolor)
