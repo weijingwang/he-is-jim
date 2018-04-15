@@ -21,4 +21,4 @@ if (chooseFont = "Roboto"):
 	pygame.display.flip()
 
  #how to use
- #messageText("bob ate a dog",x,y,size,what surface,redlevel,greenlevel,bluelevel)
+ #messageText("Text to display",x,y,size,what surface,redlevel,greenlevel,bluelevel)
