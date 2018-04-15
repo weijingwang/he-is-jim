@@ -12,7 +12,7 @@ y = 600
 black = ((0,0,0))
 screen = pygame.display.set_mode((x,y))
 #font
-menu_back = pygame.image.load("main-menu-back.png")
+menu_back = pygame.image.load("assets/images/main-menu-back.png")
 
 
 #function for menu which you can call
@@ -53,7 +53,7 @@ def main_menu():
 		screen.blit(menu_back,(0,0))
 		#messageText("Jim's Big Win",450,500,50,screen,255,255,255,"/Users/weijingwang/Documents/GitHub/he-is-jim\ local/assets/fonts/ComicSansMSRegular.ttf")#/assets/fonts/ComicSansMSRegular.ttf
 		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
-		
+
 		button("Start",0,50,200,50,False,screen)
 		button("Options",0,100,200,50,False,screen)
 		button("Help",0,150,200,50,False,screen)
@@ -75,4 +75,3 @@ def main_menu():
 		pygame.display.update()
 
 main_menu()
-
