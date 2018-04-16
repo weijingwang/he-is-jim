@@ -21,7 +21,7 @@ def showCredits():
 			if event.type == pygame.QUIT:
 				quit()
 		screen.fill(black)
-		messageText("Help",325,30,40,screen,244,67,54,"ComicSans")
-		button("Main Menu",320,400,150,50,True,surface)
+		messageText("Sorry No Options Yet",325,30,40,screen,244,67,54,"ComicSans")
+
 		pygame.display.update()
 showCredits()

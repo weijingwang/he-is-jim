@@ -3,6 +3,8 @@ import pygame
 import os
 from displayText import *
 from buttons import *
+#main menu links
+from credits import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -59,7 +61,7 @@ def main_menu():
 						pass
 					elif mainCount == 3:
 						#credits
-						pass
+						showCredits(screen)
 					elif mainCount ==4:
 						quit()
 
