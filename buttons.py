@@ -2,8 +2,8 @@
 import pygame
 pygame.init()
 
-dogeGreen = ((0,150,136))
-darkdogeGreen = ((0,100,100))
+darkdogeGreen = ((0,150,136))
+dogeGreen = ((0,200,200))
 green = ((0,255,0))
 darkgreen = ((0,100,0))
 white = ((255,255,255))
@@ -27,9 +27,9 @@ def button(text,x,y,width,height,active,surface):
 
 def kylerButton(text,x,y,width,height,active,surface,fontFamily,fontSize):
 	if active == True:
-		active = white
+		active = dogeGreen
 	else:
-		active = gold
+		active = darkdogeGreen
 
 	if (fontFamily == "ComicSans"):
 		fontFamilyButton = "assets/fonts/ComicSansMSRegular.ttf"
