@@ -86,7 +86,7 @@ def main_menu():
 		messageText("to",165,470,15,screen,255,235,59,"ComicSans")
 		messageText("move",183,470,15,screen,76,175,80,"ComicSans")
 		messageText("select",220,470,15,screen,0,150,136,"ComicSans")
-		messageText("tion",220,470,15,screen,0,188,212,"ComicSans")
+		messageText("tion",255,470,15,screen,0,188,212,"ComicSans")
 		messageText("Press Enter to select",30,490,15,screen,255,255,255,"ComicSans")
 
 		button("Start",0,50,200,50,False,screen)
