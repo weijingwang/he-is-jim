@@ -9,9 +9,12 @@ def messageText(text,x,y,size,surface,red,green,blue,chooseFont):
 
 	if (chooseFont == "ComicSans"):
 		fontFile = "assets/fonts/ComicSansMSRegular.ttf"
-
 	elif (chooseFont == "Roboto"):
 		fontFile = "assets/fonts/Roboto-Regular.ttf"
+	elif (chooseFont == None):
+		print("Sorry, there was no font specified")
+	else:
+		print("Sorry, we could not find the font " + chooseFont)
 
 	myFont = pygame.font.Font(fontFile, size)
 
