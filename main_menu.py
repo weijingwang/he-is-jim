@@ -15,16 +15,17 @@ x = 800
 y = 600
 black = ((0,0,0))
 screen = pygame.display.set_mode((x,y))
-#font
+clock = pygame.time.Clock()
 menu_back = pygame.image.load("assets/images/mainMenuBG.png")
 
 
 #function for menu which you can call
 def main_menu():
-	print ("main menu")
+	print ("open main menu")
 	done = False
 	mainCount = 0
 	while not done:
+		clock.tick(10)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
