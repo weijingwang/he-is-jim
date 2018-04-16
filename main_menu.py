@@ -16,7 +16,7 @@ y = 600
 black = ((0,0,0))
 screen = pygame.display.set_mode((x,y))
 #font
-menu_back = pygame.image.load("assets/images/main-menu-bkgd.png")
+menu_back = pygame.image.load("assets/images/mainMenuBG.png")
 
 
 #function for menu which you can call
@@ -75,25 +75,25 @@ def main_menu():
 
 		screen.blit(menu_back,(0,0))
 		#messageText("Jim's Big Win",450,500,50,screen,255,255,255,"/Users/weijingwang/Documents/GitHub/he-is-jim\ local/assets/fonts/ComicSansMSRegular.ttf")#/assets/fonts/ComicSansMSRegular.ttf
-		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
+		#messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
 
 		#Draw "Press Up and Down to move selection"
 		#messageText("Press Up and Down to move selection",30,470,15,screen,255,255,255,"ComicSans")
-		messageText("Press",30,470,15,screen,244,67,54,"ComicSans")
-		messageText("Up",71,470,15,screen,255,87,34,"ComicSans")
-		messageText("and",95,470,15,screen,255,152,0,"ComicSans")
-		messageText("Down",123,470,15,screen,255,193,7,"ComicSans")
-		messageText("to",165,470,15,screen,255,235,59,"ComicSans")
-		messageText("move",183,470,15,screen,76,175,80,"ComicSans")
-		messageText("select",220,470,15,screen,0,150,136,"ComicSans")
-		messageText("tion",255,470,15,screen,0,188,212,"ComicSans")
+		# messageText("Press",30,470,15,screen,244,67,54,"ComicSans")
+		# messageText("Up",71,470,15,screen,255,87,34,"ComicSans")
+		# messageText("and",95,470,15,screen,255,152,0,"ComicSans")
+		# messageText("Down",123,470,15,screen,255,193,7,"ComicSans")
+		# messageText("to",165,470,15,screen,255,235,59,"ComicSans")
+		# messageText("move",183,470,15,screen,76,175,80,"ComicSans")
+		# messageText("select",220,470,15,screen,0,150,136,"ComicSans")
+		# messageText("tion",255,470,15,screen,0,188,212,"ComicSans")
 		#messageText("Press Enter to Select",30,490,15,screen,255,255,255,"ComicSans")
-		messageText("Press",30,490,15,screen,3,169,244,"ComicSans")
-		messageText("En",70,490,15,screen,33,150,243,"ComicSans")
-		messageText("ter",87,490,15,screen,63,81,181,"ComicSans")
-		messageText("to",115,490,15,screen,103,58,183,"ComicSans")
-		messageText("Se",135,490,15,screen,156,39,176,"ComicSans")
-		messageText("lect",155,490,15,screen,233,30,99,"ComicSans")
+		# messageText("Press",30,490,15,screen,3,169,244,"ComicSans")
+		# messageText("En",70,490,15,screen,33,150,243,"ComicSans")
+		# messageText("ter",87,490,15,screen,63,81,181,"ComicSans")
+		# messageText("to",115,490,15,screen,103,58,183,"ComicSans")
+		# messageText("Se",135,490,15,screen,156,39,176,"ComicSans")
+		# messageText("lect",155,490,15,screen,233,30,99,"ComicSans")
 
 		button("Start",0,50,200,50,False,screen)
 		button("Options",0,100,200,50,False,screen)
