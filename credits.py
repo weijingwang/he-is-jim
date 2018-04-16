@@ -16,13 +16,26 @@ creditsBack = pygame.image.load("assets/images/the-pygameMAN.png")
 #function for menu which you can call
 def showCredits(surface):
 	done = False
+	creditsCount = 1
 	while not done:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
 			if event.type == pygame.KEYDOWN:
+
+				if event.key == pygame.K_UP:
+					creditsCount = 0
+
+				if event.key == pygame.K_DOWN:
+					creditsCount =1
+
 				if event.key == pygame.K_RETURN:
-					done= True
+					if creditsCount ==0:
+						webbrowser.open("google.com")
+					if creditsCount == 1:
+						done = True
+
+
 		surface.blit(creditsBack,(0,0))
 
 		messageText("Credits",325,30,40,surface,244,67,54,"ComicSans")
@@ -33,7 +46,9 @@ def showCredits(surface):
 		messageText("Momo DA EVIL JUMBI",270,260,20,surface,205,220,57,"ComicSans")
 		messageText("Jim the homo sapien from planet earth",200,290,20,surface,139,195,74,"ComicSans")
 		messageText("Made for Pyweek 25",320,320,20,surface,76,175,80,"ComicSans")
-		messageText("Github Source",330,350,20,surface,0,150,136,"ComicSans")
+
+		#button("Github Source",330,350,20,surface,0,150,136,"ComicSans")
+		button("Github Source",330,350,200,100,True,surface)
 
 		messageText("Press enter to return to",280,400,20,surface,255,255,255,"ComicSans")
 		kylerButton("Main Menu",320,420,150,50,True,surface,"ComicSans",40)
