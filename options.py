@@ -6,22 +6,20 @@ from buttons import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
-#screen
-x = 800
-y = 600
-black = ((0,0,0))
-screen = pygame.display.set_mode((x,y))
-#font
+#surface
 
-#function for menu which you can call
-def showCredits():
+black = ((0,0,0))
+
+def options(surface):
 	done = False
 	while not done:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
-		screen.fill(black)
-		messageText("Sorry No Options Yet",325,30,40,screen,244,67,54,"ComicSans")
-
+			if event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_RETURN:
+					done = True
+		surface.fill(black)
+		messageText("Sorry No Options Yet",325,30,40,surface,244,67,54,"ComicSans")
+		button("Main Menu",320,400,150,50,True,surface)
 		pygame.display.update()
-showCredits()

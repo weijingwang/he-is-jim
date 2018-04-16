@@ -5,6 +5,7 @@ from displayText import *
 from buttons import *
 #main menu links
 from credits import *
+from options import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -54,8 +55,8 @@ def main_menu():
 						#import the game
 						pass
 					elif mainCount == 1:#Options
-						#import the game
-						pass
+						#import the Options
+						options(screen)
 					elif mainCount == 2:#help
 						#import the help
 						pass

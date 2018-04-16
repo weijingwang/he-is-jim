@@ -20,8 +20,11 @@ def showCredits():
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
+			if event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_RETURN:
+					done = True
 		screen.fill(black)
 		messageText("Help",325,30,40,screen,244,67,54,"ComicSans")
-		button("Main Menu",320,400,150,50,True,surface)
+		button("Main Menu",320,400,150,50,True,screen)
 		pygame.display.update()
 showCredits()
