@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import pygame
 import os
+import webbrowser
 from displayText import * #KYLER DO UR CREDITS
 from buttons import *
 pygame.mixer.pre_init()
@@ -31,8 +32,8 @@ def showCredits(surface):
 		messageText("Wang Wang the Regular Dog",250,230,20,surface,255,235,59,"ComicSans")
 		messageText("Momo DA EVIL JUMBI",270,260,20,surface,205,220,57,"ComicSans")
 		messageText("Jim the homo sapien from planet earth",200,290,20,surface,139,195,74,"ComicSans")
-		messageText("Github Source",320,320,20,surface,76,175,80,"ComicSans")
-		messageText("PyWeek 25",330,350,20,surface,0,150,136,"ComicSans")
+		messageText("Made for Pyweek 25",320,320,20,surface,76,175,80,"ComicSans")
+		messageText("Github Source",330,350,20,surface,0,150,136,"ComicSans")
 
 		messageText("Press enter to return to",280,400,20,surface,255,255,255,"ComicSans")
 		kylerButton("Main Menu",320,420,150,50,True,surface,"ComicSans",40)

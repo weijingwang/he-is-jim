@@ -1,2 +1,5 @@
-pygame
-displayText
+Python
+    Python Libraries
+        pygame
+        webbrowser
+        os
