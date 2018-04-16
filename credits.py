@@ -38,3 +38,6 @@ def showCredits(surface):
 		kylerButton("Main Menu",320,420,150,50,True,surface,"ComicSans",40)
 
 		pygame.display.update()
+
+		# wait for half second
+		pygame.time.wait(100000)
