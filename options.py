@@ -7,7 +7,7 @@ pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
 #surface
-
+optionsBack = pygame.image.load("assets/images/sbgl.png")
 black = ((0,0,0))
 
 def options(surface):
@@ -19,7 +19,7 @@ def options(surface):
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_RETURN:
 					done = True
-		surface.fill(black)
+		surface.blit(optionsBack,(0,0))
 		messageText("Sorry No Options Yet",325,30,40,surface,244,67,54,"ComicSans")
 		button("Main Menu",320,400,150,50,True,surface)
 		pygame.display.update()
