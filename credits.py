@@ -39,5 +39,5 @@ def showCredits(surface):
 
 		pygame.display.update()
 
-		# wait for half second
-		pygame.time.wait(100000)
+		# wait
+		pygame.time.wait(500)
