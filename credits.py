@@ -10,6 +10,7 @@ pygame.font.init()
 
 
 creditsTxt = "This game was made by:\nWeijing Wang\nKyler Chin\n\n\nSpecial Thanks to:\nHana the Doge\nDogecoin Foundation\nWang Wang the regular dog\nMomo the Jumbi Cat"
+creditsBack = pygame.image.load("assets/images/the-pygameMAN.png")
 
 #function for menu which you can call
 def showCredits(surface):
@@ -21,7 +22,8 @@ def showCredits(surface):
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_RETURN:
 					done= True
-		surface.fill(black)
+		surface.blit(creditsBack,(0,0))
+
 		messageText("Credits",325,30,40,surface,244,67,54,"ComicSans")
 		messageText("Weijing Wang",270,100,40,surface,255,87,34,"ComicSans")
 		messageText("Kyler Chin",300,150,40,surface,255,152,0,"ComicSans")
