@@ -7,8 +7,11 @@ from buttons import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
+<<<<<<< Updated upstream
+=======
 clock = pygame.time.Clock()
 #surface
+>>>>>>> Stashed changes
 
 creditsBack = pygame.image.load("assets/images/creditsBG.png")
 
@@ -38,7 +41,7 @@ def showCredits(surface):
 				if event.key == pygame.K_RETURN:
 					if creditsCount ==0:
 						webbrowser.open_new(url)
-						print("yo")
+						print("Opening Github Repo in Browser...")
 					if creditsCount == 1:
 						done = True
 
@@ -65,3 +68,6 @@ def showCredits(surface):
 		elif creditsCount ==1:
 			kylerButton("Main Menu",320,420,150,50,True,surface,"ComicSans",40)
 		pygame.display.update()
+
+		# wait
+		pygame.time.wait(500)
