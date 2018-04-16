@@ -7,11 +7,6 @@ from buttons import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
-<<<<<<< Updated upstream
-=======
-clock = pygame.time.Clock()
-#surface
->>>>>>> Stashed changes
 
 creditsBack = pygame.image.load("assets/images/creditsBG.png")
 
