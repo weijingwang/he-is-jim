@@ -7,6 +7,8 @@ from buttons import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
+clock = pygame.time.Clock()
+#surface
 
 creditsBack = pygame.image.load("assets/images/creditsBG.png")
 
@@ -21,6 +23,7 @@ def showCredits(surface):
 	url = "https://github.com/weijingwang/he-is-jim"
 
 	while not done:
+		clock.tick(10)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
