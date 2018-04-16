@@ -35,6 +35,6 @@ def showCredits(surface):
 		messageText("PyWeek 25",330,350,20,surface,0,150,136,"ComicSans")
 
 		messageText("Press enter to return to",280,400,20,surface,255,255,255,"ComicSans")
-		kylerButton("Main Menu",320,420,150,50,True,surface,"Comic Sans",40)
+		kylerButton("Main Menu",320,420,150,50,True,surface,"ComicSans",40)
 
 		pygame.display.update()
