@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import pygame
 import os
-import webbrowser
+from webbrowser import open_new
 from displayText import * #KYLER DO UR CREDITS
 from buttons import *
 pygame.mixer.pre_init()
@@ -34,7 +34,7 @@ def showCredits(surface):
 
 				if event.key == pygame.K_RETURN:
 					if creditsCount ==0:
-						webbrowser.open_new(url)
+						open_new(url) #when from asdf import fdas , no "asdf.""
 						print("Opening Github Repo in Browser...")
 					if creditsCount == 1:
 						done = True
