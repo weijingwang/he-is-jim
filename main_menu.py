@@ -6,7 +6,6 @@ from buttons import *
 #main menu links
 from credits import *
 from options import *
-from help import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -60,7 +59,7 @@ def main_menu():
 						options(screen)
 					elif mainCount == 2:#help
 						#import the help
-						helps(screen)
+						pass
 					elif mainCount == 3:
 						#credits
 						showCredits(screen)
