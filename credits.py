@@ -32,6 +32,6 @@ def showCredits(surface):
 		messageText("Github Source",320,320,20,surface,76,175,80,"ComicSans")
 		messageText("PyWeek 25",330,350,20,surface,0,150,136,"ComicSans")
 
-		button("Main Menu",320,400,150,50,True,surface)
+		kylerButton("Main Menu",320,400,150,50,True,surface,"Roboto",40)
 
 		pygame.display.update()
