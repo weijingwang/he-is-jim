@@ -23,3 +23,20 @@ def button(text,x,y,width,height,active,surface):
 	textRect.center = ((x+(width/2)),(y+(height/2)))
 	#pygame.draw.rect(surface, active, pygame.Rect(x,y,width,height))
 	surface.blit(textSurf,textRect)
+
+def kylerButton(text,x,y,width,height,active,surface,fontFamily,fontSize):
+	if active == True:
+		active = white
+	else:
+		active = gold
+
+	if (fontFamily == "ComicSans"):
+		fontFamilyButton = "assets/fonts/ComicSansMSRegular.ttf"
+
+	elif (fontFamily == "Roboto"):
+		fontFamilyButton = "assets/fonts/Roboto-Regular.ttf"
+	buttonFont = pygame.font.Font(fontFamilyButton, fontSize)
+	textSurf, textRect = text_objects(text, buttonFont,active)
+	textRect.center = ((x+(width/2)),(y+(height/2)))
+	#pygame.draw.rect(surface, active, pygame.Rect(x,y,width,height))
+	surface.blit(textSurf,textRect)
