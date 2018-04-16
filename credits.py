@@ -32,6 +32,7 @@ def showCredits(surface):
 				if event.key == pygame.K_RETURN:
 					if creditsCount ==0:
 						webbrowser.open("google.com")
+						print("yo")
 					if creditsCount == 1:
 						done = True
 
@@ -48,7 +49,7 @@ def showCredits(surface):
 		messageText("Made for Pyweek 25",320,320,20,surface,76,175,80,"ComicSans")
 
 		#button("Github Source",330,350,20,surface,0,150,136,"ComicSans")
-		button("Github Source",330,350,200,100,True,surface)
+		dogeButton("Github Source",330,350,200,100,True,surface)
 
 		messageText("Press enter to return to",280,400,20,surface,255,255,255,"ComicSans")
 		kylerButton("Main Menu",320,420,150,50,True,surface,"ComicSans",40)
