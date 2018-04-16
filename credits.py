@@ -17,6 +17,9 @@ creditsTxt = "This game was made by:\nWeijing Wang\nKyler Chin\n\n\nSpecial Than
 def showCredits(surface):
 	done = False
 	creditsCount = 1
+
+	url = "https://github.com/weijingwang/he-is-jim"
+
 	while not done:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
@@ -31,7 +34,7 @@ def showCredits(surface):
 
 				if event.key == pygame.K_RETURN:
 					if creditsCount ==0:
-						webbrowser.open("google.com")
+						webbrowser.open_new(url)
 						print("yo")
 					if creditsCount == 1:
 						done = True
