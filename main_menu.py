@@ -78,11 +78,14 @@ def main_menu():
 		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
 
 		#Draw "Press Up and Down to move selection"
-		messageText("Press Up and Down to move selection",30,470,15,screen,255,255,255,"ComicSans")
+		#messageText("Press Up and Down to move selection",30,470,15,screen,255,255,255,"ComicSans")
 		messageText("Press",30,470,15,screen,244,67,54,"ComicSans")
 		messageText("Up",71,470,15,screen,255,87,34,"ComicSans")
 		messageText("and",95,470,15,screen,255,152,0,"ComicSans")
 		messageText("Down",123,470,15,screen,255,193,7,"ComicSans")
+		messageText("to",165,470,15,screen,255,235,59,"ComicSans")
+		messageText("move",183,470,15,screen,76,175,80,"ComicSans")
+		messageText("selection",220,470,15,screen,0,150,136,"ComicSans")
 		messageText("Press Enter to select",30,490,15,screen,255,255,255,"ComicSans")
 
 		button("Start",0,50,200,50,False,screen)
