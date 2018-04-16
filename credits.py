@@ -28,6 +28,6 @@ def showCredits():
 		messageText("Hana the Doge",300,200,20,screen,255,193,7,"ComicSans")
 		messageText("Wang Wang the Regular Dog",300,250,20,screen,255,235,59,"ComicSans")
 		messageText("Momo DA EVIL JUMBI",300,300,20,screen,205,220,57,"ComicSans")
-		messageText("Jim the Man",300,350,20,screen,205,220,57,"ComicSans")
+		messageText("Jim the homo sapien from planet earth",300,350,20,screen,205,220,57,"ComicSans")
 		pygame.display.update()
 showCredits()
