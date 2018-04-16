@@ -77,6 +77,10 @@ def main_menu():
 		#messageText("Jim's Big Win",450,500,50,screen,255,255,255,"/Users/weijingwang/Documents/GitHub/he-is-jim\ local/assets/fonts/ComicSansMSRegular.ttf")#/assets/fonts/ComicSansMSRegular.ttf
 		messageText("Jim's Big Win",450,500,50,screen,255,255,255,"Roboto")
 
+		#Draw "Press Up and Down to move selection"
+		messageText("Press Up and Down to move selection",40,480,15,screen,255,255,255,"ComicSans")
+		messageText("Press Enter to select",40,500,15,screen,255,255,255,"ComicSans")
+
 		button("Start",0,50,200,50,False,screen)
 		button("Options",0,100,200,50,False,screen)
 		button("Help",0,150,200,50,False,screen)
