@@ -1,8 +1,10 @@
 import os
 import random
+import webcolors
 
 suffix = ["","!","!!","","!!!"]
 dogeWords = ["DOGE WORDS GO HERE!"]
+dogeColors = ["#ff1744"]
 
 def dogeSay():
     firstDoge = random.randint(0, 40)
@@ -22,3 +24,6 @@ def dogeSay():
     print("finalDogePhrase created: " + finalDogePhrase)
 
     return finalDogePhrase
+
+def dogeColor():
+    return hex_to_rgb(random.choice(dogeWords))
