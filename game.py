@@ -9,6 +9,7 @@ x = 800
 y = 600
 black = ((0,0,0))
 screen = pygame.display.set_mode((x,y))
+gameBG = pygame.image.load("assets/images/starsBG.png")
 
 #menu function
 def game():
@@ -17,7 +18,7 @@ def game():
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
-		screen.fill(black)
-		messageText("Jim",100,100,100,screen,255,255,255)
+		screen.blit(gameBG,(0,0))
+		
 		pygame.display.update()
-main_menu()
+game()
