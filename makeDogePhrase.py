@@ -22,5 +22,3 @@ def dogeSay():
     print("finalDogePhrase created: " + finalDogePhrase)
 
     return finalDogePhrase
-
-dogeSay()
