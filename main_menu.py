@@ -10,7 +10,13 @@ from help import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
+#music
+pygame.mixer.music.load("assets/music/SadBoySong.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
 #screen
+pygame.display.set_caption("Jim's Big Win")
 x = 800
 y = 600
 black = ((0,0,0))
