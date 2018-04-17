@@ -13,13 +13,24 @@ gameBG1 = pygame.image.load("assets/images/stars1BG.png")
 gameBG2 = pygame.image.load("assets/images/stars2BG.png")
 gameBG3 = pygame.image.load("assets/images/stars3BG.png")
 gameBG4 = pygame.image.load("assets/images/stars4BG.png")
-jim = pygame.image.load("assets/images/jim.png")
-#menu function
+jimPic = pygame.image.load("assets/images/jim.png")
+ARock = pygame.image.load("assets/images/ARock.png")
+
+#objects
+def jim(x,y):
+	screen.blit(jimPic,(x,y))#Jim
+
+def RockA(x,y):
+	screen.blit(ARock,(x,x))#Jim
+
+
 def game():
 	done = False
 	jimX = 350
 	jimY = 470
-	backgroundCount = 0
+	backgroundCount = 0#fail
+	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
+
 	while not done:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
@@ -56,6 +67,7 @@ def game():
 			backgroundCount+=1
 
 		screen.blit(gameBG3,(0,0))
-		screen.blit(jim,(jimX,jimY))
+		jim(jimX,jimY)
+		RockA(0,0)
 		pygame.display.update()
 game()
