@@ -10,12 +10,21 @@ from help import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
+#music
+pygame.mixer.music.load("assets/music/SadBoySong.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
 #screen
+pygame.display.set_caption("Jim's Big Win")
 x = 800
 y = 600
 black = ((0,0,0))
 screen = pygame.display.set_mode((x,y))
-clock = pygame.time.Clock()
+
+gameIcon = pygame.image.load("assets/images/icon.png")#game icon
+pygame.display.set_icon(gameIcon)
+#clock = pygame.time.Clock()
 menu_back = pygame.image.load("assets/images/mainMenuBG.png")
 
 
@@ -25,7 +34,7 @@ def main_menu():
 	done = False
 	mainCount = 0
 	while not done:
-		clock.tick(10)
+		#clock.tick(10)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
