@@ -15,7 +15,7 @@ x = 800
 y = 600
 black = ((0,0,0))
 screen = pygame.display.set_mode((x,y))
-clock = pygame.time.Clock()
+#clock = pygame.time.Clock()
 menu_back = pygame.image.load("assets/images/mainMenuBG.png")
 
 
@@ -25,7 +25,7 @@ def main_menu():
 	done = False
 	mainCount = 0
 	while not done:
-		clock.tick(10)
+		#clock.tick(10)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
