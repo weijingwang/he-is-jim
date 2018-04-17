@@ -1,2 +1,6 @@
-pygame
-webcolors
+Python
+    Python Libraries
+        pygame
+        webbrowser
+        os
+        webcolors
