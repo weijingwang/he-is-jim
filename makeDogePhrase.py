@@ -11,14 +11,16 @@ def dogeSay():
     elif (firstDoge == "2"):
         dogeWord = "pls"
     else:
-        dogeWord = dogeWords[random.randint(0, len(dogeWords))]
-
+        dogeWord = random.choice(dogeWords)
     print("dogeWord set to: " + dogeWord)
 
     print("generating suffix...")
-    dogeSuffix = suffix[random.randint(0, len(suffix))]
+    dogeSuffix = random.choice(suffix)
     print("DogeSuffix set to: " + dogeSuffix)
+
     finalDogePhrase = dogeWord + dogeSuffix
     print("finalDogePhrase created: " + finalDogePhrase)
 
     return finalDogePhrase
+
+dogeSay()
