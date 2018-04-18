@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import pygame
-from displayText import * #KYLER DO UR CREDITS
+from displayText import * 
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -8,44 +8,32 @@ pygame.font.init()
 x = 800
 y = 600
 black = ((0,0,0))
+screen = pygame.display.set_mode((x,y))
 
-pictureCount = 0
-
-def introImage(img):
-    backImage = pygame.image.load(img)
-    return backImage
+#images
+jimVN = pygame.image.load("assets/images/jimVN.png")
 
 def gameIntro():
+    done = False
+    pictureCount = 0
+    pictureNumber = 10
+    backImage = jimVN
     while not done:
-    	for event in pygame.event.get():
-    		if event.type == pygame.QUIT:
-    			quit()
-    		if event.type == pygame.KEYDOWN:
-    			pass
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    pictureCount +=1
+                    print(pictureCount)
+            if pictureCount > pictureNumber:
+                #start game
+                pass
 
-            if pressed[pygame.K_SPACE]:
-                pictureCount+=1
+            if pictureCount == 0:
+                backImage = jimVN
+        screen.fill(black)
+        screen.blit(jimVN,(0,0))
+        pygame.display.update()
 
-            if pictureCount == 1:
-                introImage(img)
-            elif pictureCount ==2:
-                introImage(img)
-            elif pictureCount ==3:
-                introImage(img)
-            elif pictureCount ==4:
-                introImage(img)
-            elif pictureCount ==5:
-                introImage(img)
-            elif pictureCount ==6:
-                introImage(img)
-            elif pictureCount ==7:
-                introImage(img)
-            elif pictureCount ==8:
-                introImage(img)
-            elif pictureCount ==9:
-                introImage(img)
-            elif pictureCount ==10:
-                    introImage(img)
-
-        screen.blit(backImage,(0,0))
-		pygame.display.update()
+gameIntro()
