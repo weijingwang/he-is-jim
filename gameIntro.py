@@ -30,8 +30,8 @@ def gameIntro():
                 #start game
                 pass
 
-            if pictureCount == 0:
-                backImage = jimVN
+            if pictureCount == 0: backImage = jimVN
+            if pictureCount == 1: pass #etc...
         screen.fill(black)
         screen.blit(jimVN,(0,0))
         pygame.display.update()
