@@ -59,10 +59,10 @@ def game():
 
 		#controls for jim
 		pressed = pygame.key.get_pressed()
-		if pressed[pygame.K_LEFT] and jimX>=50:
+		if pressed[pygame.K_LEFT] and jimX>=0:
 			jimX-=7
 			backgroundCount-=1
-		if pressed[pygame.K_RIGHT] and jimX<=700:
+		if pressed[pygame.K_RIGHT] and jimX<=740:
 			jimX+=7
 			backgroundCount+=1
 
