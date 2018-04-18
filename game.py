@@ -19,8 +19,6 @@ BRock = pygame.image.load("assets/images/BRock.png")
 CRock = pygame.image.load("assets/images/CRock.png")
 ORock = pygame.image.load("assets/images/ORock.png")
 HRock = pygame.image.load("assets/images/HRock.png")
-pictureCount = 0
-
 
 #objects
 def jim(x,y):
@@ -40,10 +38,6 @@ def RockO(x,y):
 
 def RockH(x,y):
 	screen.blit(HRock,(x,x))
-
-def gameIntro():
-	if pressed[pygame.K_SPACE]:
-		pictureCount+=7
 
 def game():
 	done = False
