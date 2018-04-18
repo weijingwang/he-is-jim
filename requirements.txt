@@ -3,4 +3,4 @@ Python
         pygame
         webbrowser
         os
-        webcolors? but doesn't work?
+        webcolors
