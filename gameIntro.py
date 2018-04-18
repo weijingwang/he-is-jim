@@ -12,12 +12,16 @@ screen = pygame.display.set_mode((x,y))
 
 #images
 jimVN = pygame.image.load("assets/images/jimVN.png")
+deskBG = pygame.image.load("assets/images/deskBG.png")
 
 def gameIntro():
     done = False
     pictureCount = 0
     pictureNumber = 10
     backImage = jimVN
+    jimX = 0
+    jimY = 50
+    sayWhat = 'i hate mondays'
     while not done:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -30,10 +34,17 @@ def gameIntro():
                 #start game
                 pass
 
-            if pictureCount == 0: backImage = jimVN
-            if pictureCount == 1: pass #etc...
-        screen.fill(black)
-        screen.blit(jimVN,(0,0))
+            if pictureCount == 0:
+                backImage = deskBG
+                jimX = 0
+                jimY = 50
+                sayWhat = 'This is Jim. He screwed up and now plays the game "Frogs in the Night" every day.'
+            if pictureCount == 1:
+                sayWhat = ''
+
+        screen.blit(backImage,(0,0))
+        screen.blit(jimVN,(jimX,jimY))
+        messageText(sayWhat,50,550,20,screen,255,255,255,"Roboto")
         pygame.display.update()
 
 gameIntro()
