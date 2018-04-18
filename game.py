@@ -22,6 +22,10 @@ HRock = pygame.image.load("assets/images/HRock.png")
 jumbi1 = pygame.image.load("assets/images/jumbiBoss.png")
 jumbi2 = pygame.image.load("assets/images/jumbiBoss1.png")
 
+#music
+pygame.mixer.music.load("assets/music/HopeForADog.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
 
 
 #objects
