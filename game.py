@@ -19,7 +19,14 @@ BRock = pygame.image.load("assets/images/BRock.png")
 CRock = pygame.image.load("assets/images/CRock.png")
 ORock = pygame.image.load("assets/images/ORock.png")
 HRock = pygame.image.load("assets/images/HRock.png")
+<<<<<<< Updated upstream
 pictureCount = 0
+=======
+ARock = pygame.image.load("assets/images/jumbiBoss.png")
+ARock = pygame.image.load("assets/images/jumbiBoss.png")
+
+
+>>>>>>> Stashed changes
 
 
 #objects
