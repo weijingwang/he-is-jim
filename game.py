@@ -15,6 +15,7 @@ gameBG3 = pygame.image.load("assets/images/stars3BG.png")
 gameBG4 = pygame.image.load("assets/images/stars4BG.png")
 jimPic = pygame.image.load("assets/images/jim.png")
 ARock = pygame.image.load("assets/images/ARock.png")
+pictureCount = 0
 
 #objects
 def jim(x,y):
@@ -23,6 +24,9 @@ def jim(x,y):
 def RockA(x,y):
 	screen.blit(ARock,(x,x))#Jim
 
+def gameIntro():
+	if pressed[pygame.K_SPACE]:
+		pictureCount+=7
 
 def game():
 	done = False
