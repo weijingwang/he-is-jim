@@ -19,7 +19,9 @@ BRock = pygame.image.load("assets/images/BRock.png")
 CRock = pygame.image.load("assets/images/CRock.png")
 ORock = pygame.image.load("assets/images/ORock.png")
 HRock = pygame.image.load("assets/images/HRock.png")
-pictureCount = 0
+jumbi1 = pygame.image.load("assets/images/jumbiBoss.png")
+jumbi2 = pygame.image.load("assets/images/jumbiBoss1.png")
+
 
 
 #objects
@@ -27,19 +29,27 @@ def jim(x,y):
 	screen.blit(jimPic,(x,y))#Jim
 
 def RockA(x,y):
-	screen.blit(ARock,(x,x))
+	screen.blit(ARock,(x,y))
 
 def RockB(x,y):
-	screen.blit(BRock,(x,x))
+	screen.blit(BRock,(x,y))
 
 def RockC(x,y):
-	screen.blit(CRock,(x,x))
+	screen.blit(CRock,(x,y))
 
 def RockO(x,y):
-	screen.blit(ORock,(x,x))
+	screen.blit(ORock,(x,y))
 
 def RockH(x,y):
-	screen.blit(HRock,(x,x))
+	screen.blit(HRock,(x,y))
+
+def jumbiBoss(x,y,angery):
+	if angery == True:
+		screen.blit(jumbi2,(x,y))
+	else:
+		screen.blit(jumbi1,(x,y))
+
+
 
 def game():
 	done = False
@@ -90,5 +100,7 @@ def game():
 		RockC(200,200)
 		RockO(300,300)
 		RockH(400,400)
+		jumbiBoss(500,400,True)
+		jumbiBoss(500,200,False)
 		pygame.display.update()
 game()
