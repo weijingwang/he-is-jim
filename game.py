@@ -15,14 +15,31 @@ gameBG3 = pygame.image.load("assets/images/stars3BG.png")
 gameBG4 = pygame.image.load("assets/images/stars4BG.png")
 jimPic = pygame.image.load("assets/images/jim.png")
 ARock = pygame.image.load("assets/images/ARock.png")
+BRock = pygame.image.load("assets/images/BRock.png")
+CRock = pygame.image.load("assets/images/CRock.png")
+ORock = pygame.image.load("assets/images/ORock.png")
+HRock = pygame.image.load("assets/images/HRock.png")
 pictureCount = 0
+
 
 #objects
 def jim(x,y):
 	screen.blit(jimPic,(x,y))#Jim
 
 def RockA(x,y):
-	screen.blit(ARock,(x,x))#Jim
+	screen.blit(ARock,(x,x))
+
+def RockB(x,y):
+	screen.blit(BRock,(x,x))
+
+def RockC(x,y):
+	screen.blit(CRock,(x,x))
+
+def RockO(x,y):
+	screen.blit(ORock,(x,x))
+
+def RockH(x,y):
+	screen.blit(HRock,(x,x))
 
 def gameIntro():
 	if pressed[pygame.K_SPACE]:
@@ -63,15 +80,19 @@ def game():
 
 		#controls for jim
 		pressed = pygame.key.get_pressed()
-		if pressed[pygame.K_LEFT] and jimX>=50:
+		if pressed[pygame.K_LEFT] and jimX>=0:
 			jimX-=7
 			backgroundCount-=1
-		if pressed[pygame.K_RIGHT] and jimX<=700:
+		if pressed[pygame.K_RIGHT] and jimX<=740:
 			jimX+=7
 			backgroundCount+=1
 
 		screen.blit(gameBG3,(0,0))
 		jim(jimX,jimY)
 		RockA(0,0)
+		RockB(100,100)
+		RockC(200,200)
+		RockO(300,300)
+		RockH(400,400)
 		pygame.display.update()
 game()
