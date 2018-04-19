@@ -27,7 +27,6 @@ pygame.mixer.music.load("assets/music/HopeForADog.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-
 #objects
 def jim(x,y):
 	screen.blit(jimPic,(x,y))#Jim
@@ -54,8 +53,11 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
-def killCountScore(count):
-	messageText("Kills: "+count,0,0,18,screen,255,255,255,"Roboto")
+def kill_count(count):
+	font = pygame.font.Font("assets/fonts/Roboto-Regular.ttf", 18)
+	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
+	screen.blit(killCountText,(0,0))#corner text score
+	pygame.display.update()
 
 def game():
 	done = False
@@ -65,7 +67,6 @@ def game():
 	spaceRockY = 0
 	spaceRockSpeed = 8
 	killCount = 0
-
 	jumbiX = 0
 	jumbiY = -1000
 	backgroundCount = 0#fail
@@ -82,30 +83,35 @@ def game():
 					spaceRockY = -200
 					spaceRockSpeed += 1
 					spaceRockTypeNumber = random.randrange(0,4)
+					killCount +=1
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
 					print ("b")
 					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
 					spaceRockSpeed += 1
 					spaceRockTypeNumber = random.randrange(0,4)
+					killCount +=1
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
 					print ("c")
 					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
 					spaceRockSpeed += 1
 					spaceRockTypeNumber = random.randrange(0,4)
+					killCount +=1
 				elif event.key == pygame.K_o and spaceRockLetter == "O":
 					print("o")
 					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
 					spaceRockSpeed += 1
 					spaceRockTypeNumber = random.randrange(0,4)
+					killCount +=1
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
 					print("h")
 					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
 					spaceRockSpeed += 1
 					spaceRockTypeNumber = random.randrange(0,4)
+					killCount +=1
 
 		# if backgroundCount == 0:
 		# 	backImage = gameBG1
@@ -154,6 +160,8 @@ def game():
 
 		jim(jimX,jimY)
 		#killCountScore('1')
+		########
+		kill_count(killCount)
 		if spaceRockY>600:
 			spaceRockTypeNumber = random.randrange(0,4)
 			spaceRockY = 0 - 100
@@ -162,5 +170,6 @@ def game():
 			spaceRockTypeNumber = random.randrange(0,4)
 			#score + 1
 		jumbiBoss(jumbiX,jumbiY,False)
+		print (killCount)
 		pygame.display.update()
 game()

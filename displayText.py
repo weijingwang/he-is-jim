@@ -6,11 +6,10 @@ def messageText(text,x,y,size,surface,red,green,blue,chooseFont):
 	# os.chdir("roboto")
 	# fontPath = os.path.dirname(os.path.abspath("Roboto-Regular.ttf"))
 	# print (fontPath)qeghry'hteihjegrwrnhpvfh07ghwruhte
-
 	if (chooseFont == "ComicSans"):
-		fontFile = "assets/fonts/ComicSansMSRegular.ttf"
+		fontFile = ("assets/fonts/ComicSansMSRegular.ttf")
 	elif (chooseFont == "Roboto"):
-		fontFile = "assets/fonts/Roboto-Regular.ttf"
+		fontFile = ("assets/fonts/Roboto-Regular.ttf")
 	elif (chooseFont == None):
 		print("Sorry, there was no font specified")
 	else:
