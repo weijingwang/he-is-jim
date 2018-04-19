@@ -1,6 +1,6 @@
 import pygame
 import random
-from displayText import * 
+from displayText import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
