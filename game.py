@@ -62,7 +62,7 @@ def game():
 	jimY = 470
 	spaceRockX = 0
 	spaceRockY = 0
-	spaceRockSpeed = 2
+	spaceRockSpeed = 5
 
 	jumbiX = 0
 	jumbiY = -1000
@@ -111,8 +111,9 @@ def game():
 		jim(jimX,jimY)
 
 		if spaceRockY>600:
-			spaceRockY = random.randrange(0,800)
-			spaceRockSpeed += 5
+			spaceRockY = 0 - 100
+			spaceRockX = random.randrange(0,800)
+			spaceRockSpeed += 2
 			#score + 1
 		jumbiBoss(jumbiX,jumbiY,False)
 		pygame.display.update()
