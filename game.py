@@ -9,10 +9,10 @@ x = 800
 y = 600
 black = ((0,0,0))
 screen = pygame.display.set_mode((x,y))
-gameBG1 = pygame.image.load("assets/images/stars1BG.png")
-gameBG2 = pygame.image.load("assets/images/stars2BG.png")
-gameBG3 = pygame.image.load("assets/images/stars3BG.png")
-gameBG4 = pygame.image.load("assets/images/stars4BG.png")
+gameBG1 = pygame.image.load("assets/images/background/stars1BG.png")
+gameBG2 = pygame.image.load("assets/images/background/stars2BG.png")
+gameBG3 = pygame.image.load("assets/images/background/stars3BG.png")
+gameBG4 = pygame.image.load("assets/images/background/stars4BG.png")
 jimPic = pygame.image.load("assets/images/jim.png")
 ARock = pygame.image.load("assets/images/ARock.png")
 BRock = pygame.image.load("assets/images/BRock.png")
@@ -63,7 +63,7 @@ def game():
 	spaceRockX = 0
 	spaceRockY = 0
 	spaceRockSpeed = 5
-	killCount = 0 
+	killCount = 0
 
 	jumbiX = 0
 	jumbiY = -1000
