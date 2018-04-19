@@ -46,19 +46,21 @@ def gameIntro():
                 jimY = 50
                 sayWhat = 'Press Space'
             elif pictureCount == 1:
-                sayWhat = 'This is Jim. He screwed up and now plays the game "Frogs in the Night" every day.'
+                sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
             elif pictureCount == 2:
-                sayWhat = 'Jim is lonely and the only "friends" he has are are the internet.'
+                sayWhat = 'and now plays the game "Frogs in the Night" every day.'
             elif pictureCount == 3:
-                sayWhat = 'Today, there is a special event in "Frogs in the Night"'
+                sayWhat = 'Jim is lonely and the only "friends" he has are are the internet.'
             elif pictureCount == 4:
+                sayWhat = 'Today, there is a special event in "Frogs in the Night"'
+            elif pictureCount == 5:
                 sayWhat = ' and he plans to spend his entire day ingame.'
-            elif pictureCount ==5:
+            elif pictureCount ==6:
                 jimX = 500
                 sayWhat = '"Must g-g-get the b-b-rownn frog-g-g", says Jim,'
-            elif pictureCount ==6:
-                sayWhat = '"need to win the g-game..."'
             elif pictureCount ==7:
+                sayWhat = '"need to win the g-game..."'
+            elif pictureCount ==8:
                 sayWhat = ''
                 jimX = 1000
                 backImage = computerBG
