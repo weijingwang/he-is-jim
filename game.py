@@ -62,6 +62,8 @@ def game():
 	jimY = 470
 	spaceRockX = 0
 	spaceRockY = 0
+	jumbiX = 0
+	jumbiY = -1000
 	backgroundCount = 0#fail
 	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
 
@@ -103,7 +105,6 @@ def game():
 		screen.blit(gameBG3,(0,0))
 		jim(jimX,jimY)
 		scapeRock(spaceRockX,spaceRockY,"A")
-		jumbiBoss(500,400,True)
-		jumbiBoss(500,200,False)
+		jumbiBoss(jumbiX,jumbiY,False)
 		pygame.display.update()
 game()
