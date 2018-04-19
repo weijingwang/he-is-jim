@@ -120,26 +120,6 @@ def game():
 					print("h")
 					killSpaceRock()
 
-		# if backgroundCount == 0:
-		# 	backImage = gameBG1
-		# 	print(backgroundCount)
-		# elif backgroundCount == 1:
-		# 	backImage = gameBG2
-		# 	print(backgroundCount)
-		# elif backgroundCount == 2:
-		# 	backImage = gameBG3
-		# 	print(backgroundCount)
-		# elif backgroundCount == 3:
-		# 	backImage = gameBG4
-		# 	print(backgroundCount)
-		# elif backgroundCount == -1:
-		# 	backgroundCount =3
-		# 	print(backgroundCount)
-		# elif backgroundCount == 4:
-		# 	backgroundCount=0
-		# 	print(backgroundCount)
-
-
 		#controls for jim
 		pressed = pygame.key.get_pressed()
 		if pressed[pygame.K_LEFT] and jimX>=0:
