@@ -63,7 +63,7 @@ def game():
 	spaceRockX = 0
 	spaceRockY = 0
 	spaceRockSpeed = 5
-	killCount = 0
+	killCount = 0 
 
 	jumbiX = 0
 	jumbiY = -1000
@@ -75,7 +75,17 @@ def game():
 			if event.type == pygame.QUIT:
 				quit()
 			if event.type == pygame.KEYDOWN:
-				pass
+				if event.key == pygame.K_a:
+					print ("a")
+				elif event.key == pygame.K_b:
+					print ("b")
+				elif event.key == pygame.K_c:
+					print ("c")
+				elif event.key == pygame.K_o:
+					print("o")
+				elif event.key == pygame.K_h:
+					print("h")
+
 		# if backgroundCount == 0:
 		# 	backImage = gameBG1
 		# 	print(backgroundCount)
