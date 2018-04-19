@@ -61,9 +61,21 @@ def gameIntro():
             elif pictureCount ==7:
                 sayWhat = '"need to win the g-game..."'
             elif pictureCount ==8:
-                sayWhat = ''
+                sayWhat = '...'
                 jimX = 1000
                 backImage = computerBG
+            elif pictureCount == 9:
+                sayWhat = '"oh no... I have the case of the lose!"'
+            elif pictureCount == 10:
+                sayWhat = '"will NOT lose but can?"'
+            elif pictureCount == 11:
+                sayWhat = '...'
+            elif pictureCount == 12:
+                sayWhat = '. ..'
+            elif pictureCount == 13:
+                sayWhat = '.. .'
+            elif pictureCount == 14:
+                sayWhat = '...'
 
                 #FitN screen
 
