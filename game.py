@@ -32,20 +32,8 @@ pygame.mixer.music.play(-1)
 def jim(x,y):
 	screen.blit(jimPic,(x,y))#Jim
 
-def RockA(x,y):
-	screen.blit(ARock,(x,y))
-
-def RockB(x,y):
-	screen.blit(BRock,(x,y))
-
-def RockC(x,y):
-	screen.blit(CRock,(x,y))
-
-def RockO(x,y):
-	screen.blit(ORock,(x,y))
-
-def RockH(x,y):
-	screen.blit(HRock,(x,y))
+def scapeRock(x,y,type):
+	pass
 
 def jumbiBoss(x,y,angery):
 	if angery == True:
@@ -99,11 +87,7 @@ def game():
 
 		screen.blit(gameBG3,(0,0))
 		jim(jimX,jimY)
-		RockA(0,0)
-		RockB(100,100)
-		RockC(200,200)
-		RockO(300,300)
-		RockH(400,400)
+
 		jumbiBoss(500,400,True)
 		jumbiBoss(500,200,False)
 		pygame.display.update()
