@@ -1,10 +1,14 @@
 import os
 import random
-import webcolors
 
 suffix = ["","!","!!","","!!!"]
 dogeWords = ["DOGE WORDS GO HERE!"]
 dogeColors = ["#ff1744"]
+
+def hex_to_rgb(hex):
+  hex = hex.lstrip('#')
+  hlen = len(hex)
+  return tuple(int(hex[i:i+hlen/3], 16) for i in range(0, hlen, hlen/3))
 
 def dogeSay():
     firstDoge = random.randint(0, 40)
