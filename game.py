@@ -22,7 +22,6 @@ HRock = pygame.image.load("assets/images/HRock.png")
 DRock = pygame.image.load("assets/images/DRock.png")
 jumbi1 = pygame.image.load("assets/images/jumbiBoss.png")
 jumbi2 = pygame.image.load("assets/images/jumbiBoss1.png")
-spaceRockLetterChoices = ["A","B","C","D","O","H"]
 spaceRockTypeNumber = random.randrange(0,6)
 
 #music
