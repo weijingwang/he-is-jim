@@ -102,7 +102,7 @@ def killSpaceRock():
 		spaceRockSpeed += 0.05
 	#randomly selects next spacerock
 	spaceRockTypeNumber = random.randrange(0,6)
-	random.choice(spaceRockLetterChoices)
+	#random.choice(spaceRockLetterChoices)
 	findRockLetter()
 	#print(spaceRockTypeNumber)
 	#adds 1 to killCount score in corner of screen, see kill_count()
