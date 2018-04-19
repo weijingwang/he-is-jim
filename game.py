@@ -33,7 +33,20 @@ def jim(x,y):
 	screen.blit(jimPic,(x,y))#Jim
 
 def scapeRock(x,y,type):
-	pass
+	rockSprite = "what rock?"
+	if type == "A":
+		rockSprite = ARock
+	elif type == "B":
+		rockSprite = BRock
+	elif type == "C":
+		rockSprite = CRock
+	elif type == "O":
+		rockSprite = ORock
+	elif type == "H":
+		rockSprite = HRock
+
+	screen.blit(rockSprite,(x,y))
+
 
 def jumbiBoss(x,y,angery):
 	if angery == True:
@@ -87,7 +100,7 @@ def game():
 
 		screen.blit(gameBG3,(0,0))
 		jim(jimX,jimY)
-
+		scapeRock(0,0,"A")
 		jumbiBoss(500,400,True)
 		jumbiBoss(500,200,False)
 		pygame.display.update()
