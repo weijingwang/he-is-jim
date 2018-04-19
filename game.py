@@ -32,20 +32,21 @@ pygame.mixer.music.play(-1)
 def jim(x,y):
 	screen.blit(jimPic,(x,y))#Jim
 
-def RockA(x,y):
-	screen.blit(ARock,(x,y))
+def scapeRock(x,y,type):
+	rockSprite = "what rock?"
+	if type == "A":
+		rockSprite = ARock
+	elif type == "B":
+		rockSprite = BRock
+	elif type == "C":
+		rockSprite = CRock
+	elif type == "O":
+		rockSprite = ORock
+	elif type == "H":
+		rockSprite = HRock
 
-def RockB(x,y):
-	screen.blit(BRock,(x,y))
+	screen.blit(rockSprite,(x,y))
 
-def RockC(x,y):
-	screen.blit(CRock,(x,y))
-
-def RockO(x,y):
-	screen.blit(ORock,(x,y))
-
-def RockH(x,y):
-	screen.blit(HRock,(x,y))
 
 def jumbiBoss(x,y,angery):
 	if angery == True:
@@ -59,6 +60,10 @@ def game():
 	done = False
 	jimX = 350
 	jimY = 470
+	spaceRockX = 0
+	spaceRockY = 0
+	jumbiX = 0
+	jumbiY = -1000
 	backgroundCount = 0#fail
 	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
 
@@ -99,12 +104,7 @@ def game():
 
 		screen.blit(gameBG3,(0,0))
 		jim(jimX,jimY)
-		RockA(0,0)
-		RockB(100,100)
-		RockC(200,200)
-		RockO(300,300)
-		RockH(400,400)
-		jumbiBoss(500,400,True)
-		jumbiBoss(500,200,False)
+		scapeRock(spaceRockX,spaceRockY,"A")
+		jumbiBoss(jumbiX,jumbiY,False)
 		pygame.display.update()
 game()
