@@ -1,6 +1,6 @@
 import pygame
 import random
-from displayText import * #KYLER DO UR CREDITS
+from displayText import * 
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -80,12 +80,16 @@ def game():
 					spaceRockY = -200
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
 					print ("b")
+					spaceRockY = -200
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
 					print ("c")
+					spaceRockY = -200
 				elif event.key == pygame.K_o and spaceRockLetter == "O":
 					print("o")
+					spaceRockY = -200
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
 					print("h")
+					spaceRockY = -200
 
 		# if backgroundCount == 0:
 		# 	backImage = gameBG1
