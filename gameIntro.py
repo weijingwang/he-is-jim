@@ -13,8 +13,8 @@ screen = pygame.display.set_mode((x,y))
 
 #images
 jimVN = pygame.image.load("assets/images/jimVN.png")
-deskBG = pygame.image.load("assets/images/deskBG.png")
-computerBG = pygame.image.load("assets/images/deskBG2.png")
+deskBG = pygame.image.load("assets/images/background/deskBG.png")
+computerBG = pygame.image.load("assets/images/background/deskBG2.png")
 #doge
 def gameIntro():
     done = False

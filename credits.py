@@ -8,7 +8,7 @@ pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
 
-creditsBack = pygame.image.load("assets/images/creditsBG.png")
+creditsBack = pygame.image.load("assets/images/background/creditsBG.png")
 
 creditsTxt = "This game was made by:\nWeijing Wang\nKyler Chin\n\n\nSpecial Thanks to:\nHana the Doge\nDogecoin Foundation\nWang Wang the regular dog\nMomo the Jumbi Cat"
 

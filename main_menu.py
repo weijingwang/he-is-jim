@@ -25,7 +25,7 @@ screen = pygame.display.set_mode((x,y))
 gameIcon = pygame.image.load("assets/images/icon.png")#game icon
 pygame.display.set_icon(gameIcon)
 #clock = pygame.time.Clock()
-menu_back = pygame.image.load("assets/images/mainMenuBG.png")
+menu_back = pygame.image.load("assets/images/background/mainMenuBG.png")
 
 
 #function for menu which you can call

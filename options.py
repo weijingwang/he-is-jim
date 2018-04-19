@@ -7,7 +7,7 @@ pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
 #surface
-optionsBack = pygame.image.load("assets/images/optionsBG.png")
+optionsBack = pygame.image.load("assets/images/background/optionsBG.png")
 black = ((0,0,0))
 
 def options(surface):

@@ -6,7 +6,7 @@ from buttons import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
-helpBG = pygame.image.load("assets/images/helpBG.png")
+helpBG = pygame.image.load("assets/images/background/helpBG.png")
 def helps(surface):
 	done = False
 	while not done:
