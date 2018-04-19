@@ -1,6 +1,6 @@
 import pygame
 import random
-from displayText import * 
+from displayText import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -76,19 +76,19 @@ def game():
 				quit()
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_a and spaceRockLetter == "A":
-					print ("a")
+					print ("A Key Pressed")
 					spaceRockY = -200
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
-					print ("b")
+					print ("B Key Pressed")
 					spaceRockY = -200
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
-					print ("c")
+					print ("C Key Pressed")
 					spaceRockY = -200
 				elif event.key == pygame.K_o and spaceRockLetter == "O":
-					print("o")
+					print("O Key Pressed")
 					spaceRockY = -200
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
-					print("h")
+					print("H Key Pressed")
 					spaceRockY = -200
 
 		# if backgroundCount == 0:
