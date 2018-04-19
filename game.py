@@ -54,7 +54,8 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
-
+def killCountScore(count):
+	messageText("Kills: "+count,0,0,18,screen,255,255,255,"Roboto")
 
 def game():
 	done = False
@@ -152,7 +153,7 @@ def game():
 		spaceRockY +=spaceRockSpeed
 
 		jim(jimX,jimY)
-
+		#killCountScore('1')
 		if spaceRockY>600:
 			spaceRockTypeNumber = random.randrange(0,4)
 			spaceRockY = 0 - 100
