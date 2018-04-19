@@ -3,7 +3,7 @@ import random
 
 suffix = ["","!","!!","","!!!"]
 dogeWords = ["DOGE WORDS GO HERE!"]
-dogeColors = ["#ff5252","#ff4081","#e040fb","#7c4dff","#536dfe","#448aff","#40c4ff","#18ffff","#64ffda","#69f0ae","#b2ff59","#eeff41","#ffff00","#ffd740","#ffd740","#ff6e40","#ff1744","#f50057","#d500f9","#651fff","#3d5afe","#2979ff","#00b0ff","#00e5ff","#1de9b6","#00e676","#76ff03","#76ff03","#ffea00","#ffc400","#ff9100",""#ff3d00"]
+dogeColors = ["#ff5252","#ff4081","#e040fb","#7c4dff","#536dfe","#448aff","#40c4ff","#18ffff","#64ffda","#69f0ae","#b2ff59","#eeff41","#ffff00","#ffd740","#ffd740","#ff6e40","#ff1744","#f50057","#d500f9","#651fff","#3d5afe","#2979ff","#00b0ff","#00e5ff","#1de9b6","#00e676","#76ff03","#76ff03","#ffea00","#ffc400","#ff9100","#ff3d00"]
 
 def hexToRgb(hex_value):
 
