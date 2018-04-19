@@ -78,8 +78,10 @@ def killSpaceRock():
 	#increase spaceRockSpeed over time per button pressed
 	if spaceRockSpeed <= 10:
 		spaceRockSpeed += 0.3
-	if spaceRockSpeed > 10:
-			spaceRockSpeed += 0.1
+	elif spaceRockSpeed > 10 and spaceRockSpeed <= 100:
+		spaceRockSpeed += 0.1
+	elif spaceRockSpeed > 100:
+		spaceRockSpeed += 0.05
 	#randomly selects next spacerock
 	spaceRockTypeNumber = random.randrange(0,6)
 	print(spaceRockTypeNumber)
@@ -158,7 +160,7 @@ def game():
 			spaceRockLetter = "H"
 		elif spaceRockTypeNumber == 5:
 			spaceRockLetter = "D"
-		#print("spaceRockLetter: " + spaceRockLetter)
+		#print("spaceTypeLetter: " + spaceRockLetter)
 
 		screen.blit(gameBG3,(0,0))
 		spaceRock(spaceRockX,spaceRockY,spaceRockLetter)
