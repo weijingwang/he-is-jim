@@ -76,9 +76,13 @@ def killSpaceRock():
 	spaceRockX = random.randrange(0,700)
 	spaceRockY = -200
 	#increase spaceRockSpeed over time per button pressed
-	spaceRockSpeed += 0.5
+	if spaceRockSpeed <= 10:
+		spaceRockSpeed += 0.3
+	if spaceRockSpeed > 10:
+			spaceRockSpeed += 0.1
 	#randomly selects next spacerock
-	spaceRockTypeNumber = random.randrange(0,5)
+	spaceRockTypeNumber = random.randrange(0,6)
+	print(spaceRockTypeNumber)
 	#adds 1 to killCount score in corner of screen, see kill_count()
 	killCount +=1
 
@@ -106,7 +110,7 @@ def game():
 	jumbiY = -1000
 	backgroundCount = 0#fail
 	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
-	spaceRockTypeNumber = random.randrange(0,5)
+	spaceRockTypeNumber = random.randrange(0,6)
 
 	while not done:
 		for event in pygame.event.get():
@@ -154,6 +158,7 @@ def game():
 			spaceRockLetter = "H"
 		elif spaceRockTypeNumber == 5:
 			spaceRockLetter = "D"
+		#print("spaceRockLetter: " + spaceRockLetter)
 
 		screen.blit(gameBG3,(0,0))
 		spaceRock(spaceRockX,spaceRockY,spaceRockLetter)
@@ -164,11 +169,11 @@ def game():
 		########
 		kill_count(killCount)
 		if spaceRockY>600:
-			spaceRockTypeNumber = random.randrange(0,4)
+			spaceRockTypeNumber = random.randrange(0,6)
 			spaceRockY = 0 - 100
 			spaceRockX = random.randrange(0,700)
 			spaceRockSpeed += 1
-			spaceRockTypeNumber = random.randrange(0,4)
+			spaceRockTypeNumber = random.randrange(0,6)
 			#score + 1
 		jumbiBoss(jumbiX,jumbiY,False)
 		#print (killCount)
