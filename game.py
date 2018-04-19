@@ -63,18 +63,30 @@ def game():
 	spaceRockX = 0
 	spaceRockY = 0
 	spaceRockSpeed = 5
+	killCount = 0 
 
 	jumbiX = 0
 	jumbiY = -1000
 	backgroundCount = 0#fail
 	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
-
+	spaceRockTypeNumber = random.randrange(0,4)
 	while not done:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
 			if event.type == pygame.KEYDOWN:
-				pass
+				if event.key == pygame.K_a and spaceRockLetter == "A":
+					print ("a")
+					spaceRockY = -200
+				elif event.key == pygame.K_b and spaceRockLetter == "B":
+					print ("b")
+				elif event.key == pygame.K_c and spaceRockLetter == "C":
+					print ("c")
+				elif event.key == pygame.K_o and spaceRockLetter == "O":
+					print("o")
+				elif event.key == pygame.K_h and spaceRockLetter == "H":
+					print("h")
+
 		# if backgroundCount == 0:
 		# 	backImage = gameBG1
 		# 	print(backgroundCount)
@@ -104,16 +116,30 @@ def game():
 			jimX+=7
 			backgroundCount+=1
 
+		spaceRockLetter = "A"
+		if spaceRockTypeNumber == 0:
+			spaceRockLetter = "A"
+		elif spaceRockTypeNumber == 1:
+			spaceRockLetter = "B"
+		elif spaceRockTypeNumber == 2:
+			spaceRockLetter = "C"
+		elif spaceRockTypeNumber == 3:
+			spaceRockLetter = "O"
+		elif spaceRockTypeNumber == 4:
+			spaceRockLetter = "H"
+
 		screen.blit(gameBG3,(0,0))
-		spaceRock(spaceRockX,spaceRockY,"A")
+		spaceRock(spaceRockX,spaceRockY,spaceRockLetter)
 		spaceRockY +=spaceRockSpeed
 
 		jim(jimX,jimY)
 
 		if spaceRockY>600:
+			spaceRockTypeNumber = random.randrange(0,4)
 			spaceRockY = 0 - 100
 			spaceRockX = random.randrange(0,800)
 			spaceRockSpeed += 2
+			spaceRockTypeNumber = random.randrange(0,4)
 			#score + 1
 		jumbiBoss(jumbiX,jumbiY,False)
 		pygame.display.update()
