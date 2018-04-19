@@ -19,6 +19,7 @@ BRock = pygame.image.load("assets/images/BRock.png")
 CRock = pygame.image.load("assets/images/CRock.png")
 ORock = pygame.image.load("assets/images/ORock.png")
 HRock = pygame.image.load("assets/images/HRock.png")
+DRock = pygame.image.load("assets/images/DRock.png")
 jumbi1 = pygame.image.load("assets/images/jumbiBoss.png")
 jumbi2 = pygame.image.load("assets/images/jumbiBoss1.png")
 
@@ -43,6 +44,8 @@ def spaceRock(x,y,type):
 		rockSprite = ORock
 	elif type == "H":
 		rockSprite = HRock
+	elif type == "D":
+		rockSprite = DRock
 
 	screen.blit(rockSprite,(x,y))
 
@@ -73,9 +76,9 @@ def killSpaceRock():
 	spaceRockX = random.randrange(0,700)
 	spaceRockY = -200
 	#increase spaceRockSpeed over time per button pressed
-	spaceRockSpeed += 1
+	spaceRockSpeed += 0.5
 	#randomly selects next spacerock
-	spaceRockTypeNumber = random.randrange(0,4)
+	spaceRockTypeNumber = random.randrange(0,5)
 	#adds 1 to killCount score in corner of screen, see kill_count()
 	killCount +=1
 
@@ -103,7 +106,7 @@ def game():
 	jumbiY = -1000
 	backgroundCount = 0#fail
 	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
-	spaceRockTypeNumber = random.randrange(0,4)
+	spaceRockTypeNumber = random.randrange(0,5)
 
 	while not done:
 		for event in pygame.event.get():
@@ -111,19 +114,22 @@ def game():
 				quit()
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_a and spaceRockLetter == "A":
-					print ("a")
+					print ("a pressed")
 					killSpaceRock()
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
-					print ("b")
+					print ("b pressed")
 					killSpaceRock()
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
-					print ("c")
+					print ("c pressed")
 					killSpaceRock()
 				elif event.key == pygame.K_o and spaceRockLetter == "O":
-					print("o")
+					print("o pressed")
 					killSpaceRock()
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
-					print("h")
+					print("h pressed")
+					killSpaceRock()
+				elif event.key == pygame.K_h and spaceRockLetter == "H":
+					print("h pressed")
 					killSpaceRock()
 
 		#controls for jim
@@ -146,6 +152,8 @@ def game():
 			spaceRockLetter = "O"
 		elif spaceRockTypeNumber == 4:
 			spaceRockLetter = "H"
+		elif spaceRockTypeNumber == 5:
+			spaceRockLetter = "D"
 
 		screen.blit(gameBG3,(0,0))
 		spaceRock(spaceRockX,spaceRockY,spaceRockLetter)
@@ -163,6 +171,6 @@ def game():
 			spaceRockTypeNumber = random.randrange(0,4)
 			#score + 1
 		jumbiBoss(jumbiX,jumbiY,False)
-		print (killCount)
+		#print (killCount)
 		pygame.display.update()
 game()
