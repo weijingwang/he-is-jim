@@ -53,36 +53,52 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
+
+
 def kill_count(count):
 	font = pygame.font.Font("assets/fonts/Roboto-Regular.ttf", 18)
 	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
 	screen.blit(killCountText,(0,0))#corner text score
 	pygame.display.update()
 
-def game():
-	done = False
-	global jimX
-	jimX = 350
-	global jimY
-	jimY = 470
+def killSpaceRock():
 	global spaceRockX
-	spaceRockX = 0
 	global spaceRockY
-	spaceRockY = 0
 	global spaceRockSpeed
-	spaceRockSpeed = 8
+	global spaceRockTypeNumber
 	global killCount
-	killCount = 0
-	global jumbiX
-	jumbiX = 0
-	global jumbiY
-	jumbiY = -1000
-	global backgroundCount
-	backgroundCount = 0#fail
-	global enemyKillCount
-	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
-	global spaceRockNumber
+	spaceRockX = random.randrange(0,700)
+	spaceRockY = -200
+	spaceRockSpeed += 1
 	spaceRockTypeNumber = random.randrange(0,4)
+	killCount +=1
+
+def game():
+	global jimX
+	global jimY
+	global spaceRockX
+	global spaceRockY
+	global spaceRockSpeed
+	global killCount
+	global jumbiX
+	global jumbiY
+	global backgroundCount
+	global enemyKillCount
+	global spaceRockNumber
+
+	done = False
+	jimX = 350
+	jimY = 470
+	spaceRockX = 0
+	spaceRockY = 0
+	spaceRockSpeed = 8
+	killCount = 0
+	jumbiX = 0
+	jumbiY = -1000
+	backgroundCount = 0#fail
+	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
+	spaceRockTypeNumber = random.randrange(0,4)
+
 	while not done:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
@@ -90,39 +106,19 @@ def game():
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_a and spaceRockLetter == "A":
 					print ("a")
-					spaceRockX = random.randrange(0,700)
-					spaceRockY = -200
-					spaceRockSpeed += 1
-					spaceRockTypeNumber = random.randrange(0,4)
-					killCount +=1
+					killSpaceRock()
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
 					print ("b")
-					spaceRockX = random.randrange(0,700)
-					spaceRockY = -200
-					spaceRockSpeed += 1
-					spaceRockTypeNumber = random.randrange(0,4)
-					killCount +=1
+					killSpaceRock()
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
 					print ("c")
-					spaceRockX = random.randrange(0,700)
-					spaceRockY = -200
-					spaceRockSpeed += 1
-					spaceRockTypeNumber = random.randrange(0,4)
-					killCount +=1
+					killSpaceRock()
 				elif event.key == pygame.K_o and spaceRockLetter == "O":
 					print("o")
-					spaceRockX = random.randrange(0,700)
-					spaceRockY = -200
-					spaceRockSpeed += 1
-					spaceRockTypeNumber = random.randrange(0,4)
-					killCount +=1
+					killSpaceRock()
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
 					print("h")
-					spaceRockX = random.randrange(0,700)
-					spaceRockY = -200
-					spaceRockSpeed += 1
-					spaceRockTypeNumber = random.randrange(0,4)
-					killCount +=1
+					killSpaceRock()
 
 		# if backgroundCount == 0:
 		# 	backImage = gameBG1
