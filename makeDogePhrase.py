@@ -28,4 +28,4 @@ def dogeSay():
 def dogeColor():
     dogeColorOutput = hex_to_rgb(random.choice(dogeColors))
     return dogecolorOutput
-    print(dogeColorOutput)
+    print("dogeColorOutput: " + dogeColorOutput)
