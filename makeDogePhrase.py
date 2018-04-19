@@ -30,4 +30,4 @@ def dogeSay():
     return finalDogePhrase
 
 def dogeColor():
-    return hex_to_rgb(random.choice(dogeWords))
+    return hex_to_rgb(random.choice(dogeColors))
