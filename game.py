@@ -62,7 +62,7 @@ def game():
 	jimY = 470
 	spaceRockX = 0
 	spaceRockY = 0
-	spaceRockSpeed = 5
+	spaceRockSpeed = 8
 	killCount = 0
 
 	jumbiX = 0
@@ -77,19 +77,34 @@ def game():
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_a and spaceRockLetter == "A":
 					print ("a")
+					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
+					spaceRockSpeed += 1
+					spaceRockTypeNumber = random.randrange(0,4)
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
 					print ("b")
+					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
+					spaceRockSpeed += 1
+					spaceRockTypeNumber = random.randrange(0,4)
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
 					print ("c")
+					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
+					spaceRockSpeed += 1
+					spaceRockTypeNumber = random.randrange(0,4)
 				elif event.key == pygame.K_o and spaceRockLetter == "O":
 					print("o")
+					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
+					spaceRockSpeed += 1
+					spaceRockTypeNumber = random.randrange(0,4)
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
 					print("h")
+					spaceRockX = random.randrange(0,700)
 					spaceRockY = -200
+					spaceRockSpeed += 1
+					spaceRockTypeNumber = random.randrange(0,4)
 
 		# if backgroundCount == 0:
 		# 	backImage = gameBG1
@@ -141,8 +156,8 @@ def game():
 		if spaceRockY>600:
 			spaceRockTypeNumber = random.randrange(0,4)
 			spaceRockY = 0 - 100
-			spaceRockX = random.randrange(0,800)
-			spaceRockSpeed += 2
+			spaceRockX = random.randrange(0,700)
+			spaceRockSpeed += 1
 			spaceRockTypeNumber = random.randrange(0,4)
 			#score + 1
 		jumbiBoss(jumbiX,jumbiY,False)
