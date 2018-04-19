@@ -128,8 +128,8 @@ def game():
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
 					print("h pressed")
 					killSpaceRock()
-				elif event.key == pygame.K_h and spaceRockLetter == "H":
-					print("h pressed")
+				elif event.key == pygame.K_d and spaceRockLetter == "D":
+					print("D pressed")
 					killSpaceRock()
 
 		#controls for jim
