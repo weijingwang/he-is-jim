@@ -1,5 +1,5 @@
-
 import pygame
+import random
 from displayText import * #KYLER DO UR CREDITS
 pygame.mixer.pre_init()
 pygame.init()
@@ -32,7 +32,7 @@ pygame.mixer.music.play(-1)
 def jim(x,y):
 	screen.blit(jimPic,(x,y))#Jim
 
-def scapeRock(x,y,type):
+def spaceRock(x,y,type):
 	rockSprite = "what rock?"
 	if type == "A":
 		rockSprite = ARock
@@ -62,6 +62,8 @@ def game():
 	jimY = 470
 	spaceRockX = 0
 	spaceRockY = 0
+	spaceRockSpeed = 2
+
 	jumbiX = 0
 	jumbiY = -1000
 	backgroundCount = 0#fail
@@ -103,8 +105,11 @@ def game():
 			backgroundCount+=1
 
 		screen.blit(gameBG3,(0,0))
+		spaceRock(spaceRockX,spaceRockY,"A")
+		spaceRockY +=spaceRockSpeed
+
 		jim(jimX,jimY)
-		scapeRock(spaceRockX,spaceRockY,"A")
+
 		jumbiBoss(jumbiX,jumbiY,False)
 		pygame.display.update()
 game()
