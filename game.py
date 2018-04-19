@@ -63,16 +63,27 @@ def kill_count(count):
 
 def game():
 	done = False
+	global jimX
 	jimX = 350
+	global jimY
 	jimY = 470
+	global spaceRockX
 	spaceRockX = 0
+	global spaceRockY
 	spaceRockY = 0
+	global spaceRockSpeed
 	spaceRockSpeed = 8
+	global killCount
 	killCount = 0
+	global jumbiX
 	jumbiX = 0
+	global jumbiY
 	jumbiY = -1000
+	global backgroundCount
 	backgroundCount = 0#fail
+	global enemyKillCount
 	enemyKillCount = 0#THIS IS USED FOR COUNTING ENEMIES KILLED. RANDOM ENEMIES YES? WHEN CERTAIN NUMBER OF ENEMIES KILLED, TRIGGER EVENT
+	global spaceRockNumber
 	spaceRockTypeNumber = random.randrange(0,4)
 	while not done:
 		for event in pygame.event.get():
