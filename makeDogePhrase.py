@@ -26,6 +26,6 @@ def dogeSay():
     return finalDogePhrase
 
 def dogeColor():
-    return hexToRgb(random.choice(dogeColors))
+    return hex_to_rgb(random.choice(dogeColors))
 
 dogeColor()
