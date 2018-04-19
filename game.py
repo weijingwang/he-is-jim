@@ -53,8 +53,6 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
-
-
 def kill_count(count):
 	font = pygame.font.Font("assets/fonts/Roboto-Regular.ttf", 18)
 	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
