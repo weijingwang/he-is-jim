@@ -17,5 +17,5 @@ background_sprites = pygame.sprite.Group()
 
 background_sprites.draw(screen)
 middle_sprites.draw(screen)
-dogecoin_sprites.sprite.Group()
+dogecoin_sprites.draw(screen)
 front_sprites.draw(screen)
