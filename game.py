@@ -77,6 +77,7 @@ def game():
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_a and spaceRockLetter == "A":
 					print ("a")
+					spaceRockY = -200
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
 					print ("b")
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
