@@ -96,10 +96,14 @@ def killSpaceRock():
 	#increase spaceRockSpeed over time per button pressed
 	if spaceRockSpeed <= 10:
 		spaceRockSpeed += 0.3
-	elif spaceRockSpeed > 10 and spaceRockSpeed <= 100:
+	elif spaceRockSpeed > 10 and spaceRockSpeed <= 50:
 		spaceRockSpeed += 0.1
-	elif spaceRockSpeed > 100:
+	elif spaceRockSpeed > 50 and spaceRockSpeed <= 100:
+		spaceRockSpeed += 0.07
+	elif spaceRockSpeed > 100 and spaceRockSpeed <= 150:
 		spaceRockSpeed += 0.05
+	elif spaceRockSpeed > 150 and spaceRockSpeed <= 200:
+		spaceRockSpeed += 0.02
 	#randomly selects next spacerock
 	spaceRockTypeNumber = random.randrange(0,6)
 	#random.choice(spaceRockLetterChoices)
