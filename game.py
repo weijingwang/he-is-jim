@@ -61,16 +61,22 @@ def kill_count(count):
 	screen.blit(killCountText,(0,0))#corner text score
 	pygame.display.update()
 
+#killSpaceRock() is executed when a player correctly pushes a key
 def killSpaceRock():
 	global spaceRockX
 	global spaceRockY
 	global spaceRockSpeed
 	global spaceRockTypeNumber
 	global killCount
+
+	#random choose next rock location
 	spaceRockX = random.randrange(0,700)
 	spaceRockY = -200
+	#increase spaceRockSpeed over time per button pressed
 	spaceRockSpeed += 1
+	#randomly selects next spacerock
 	spaceRockTypeNumber = random.randrange(0,4)
+	#adds 1 to killCount score in corner of screen, see kill_count()
 	killCount +=1
 
 def game():
