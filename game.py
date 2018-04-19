@@ -75,15 +75,15 @@ def game():
 			if event.type == pygame.QUIT:
 				quit()
 			if event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_a:
+				if event.key == pygame.K_a and spaceRockLetter == "A":
 					print ("a")
-				elif event.key == pygame.K_b:
+				elif event.key == pygame.K_b and spaceRockLetter == "B":
 					print ("b")
-				elif event.key == pygame.K_c:
+				elif event.key == pygame.K_c and spaceRockLetter == "C":
 					print ("c")
-				elif event.key == pygame.K_o:
+				elif event.key == pygame.K_o and spaceRockLetter == "O":
 					print("o")
-				elif event.key == pygame.K_h:
+				elif event.key == pygame.K_h and spaceRockLetter == "H":
 					print("h")
 
 		# if backgroundCount == 0:
