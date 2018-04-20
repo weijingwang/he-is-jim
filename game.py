@@ -23,11 +23,13 @@ DRock = pygame.image.load("assets/images/rocks/DRock.png")
 jumbi1 = pygame.image.load("assets/images/jumbiBoss.png")
 jumbi2 = pygame.image.load("assets/images/jumbiBoss1.png")
 spaceRockTypeNumber = random.randrange(0,6)
+musicOption = True
 
 #music
-pygame.mixer.music.load("assets/music/HopeForADog.mp3")
-pygame.mixer.music.set_volume(0.5)
-pygame.mixer.music.play(-1)
+if (musicOption == True):
+	pygame.mixer.music.load("assets/music/HopeForADog.mp3")
+	pygame.mixer.music.set_volume(0.5)
+	pygame.mixer.music.play(-1)
 
 #objects
 def jim(x,y):
