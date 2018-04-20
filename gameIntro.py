@@ -30,6 +30,7 @@ Scene10 = pygame.mixer.Sound("assets/music/introVoice/10.ogg")
 Scene15 = pygame.mixer.Sound("assets/music/introVoice/15.ogg")
 Scene16 = pygame.mixer.Sound("assets/music/introVoice/16.ogg")
 Scene17 = pygame.mixer.Sound("assets/music/introVoice/17.ogg")
+Scene18 = pygame.mixer.Sound("assets/music/introVoice/18.ogg")
 Scene45 = pygame.mixer.Sound("assets/music/introVoice/45.ogg")
 Scene46 = pygame.mixer.Sound("assets/music/introVoice/46.ogg")
 
@@ -121,6 +122,7 @@ def gameIntro(surface):
                 playVoice(Scene17)
                 sayWhat = '"I AM GOING TO LOSE THE GAME WHAT THE HECK"'
             elif pictureCount ==18:
+                playVoice(Scene18)
                 character2 = dogeLeft
                 sayWhat = '"No...", said the magic doge'
             elif pictureCount ==19:
