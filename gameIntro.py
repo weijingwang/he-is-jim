@@ -109,7 +109,12 @@ def gameIntro():
                 dogeX = 70
             elif pictureCount == 26:
                 sayWhat ='"You..YY.YOU maake mmee wi-wi-w-win game!", Jim mumbled in amazement'
-
+            elif pictureCount ==27:
+                backImage =deskBG
+                dogeX = -110
+                sayWhat = "Jim is stunned and decides to become Doge's first worshipper"
+            elif pictureCount ==28:
+                pass
                 #FitN screen
 
         screen.blit(backImage,(0,0))
