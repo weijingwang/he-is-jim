@@ -150,6 +150,7 @@ def game():
 			spaceRockY = 0 - 100
 			spaceRockX = random.randrange(0,700)
 			spaceRockSpeed += 1
+			killCount -=1#if not kill rock, get penalty of -1 point
 			spaceRockTypeNumber = random.randrange(0,6)
 			print(spaceRockTypeNumber)
 			findRockLetter()
