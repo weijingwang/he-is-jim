@@ -189,6 +189,10 @@ def game():
 			jimX+=7
 			backgroundCount+=1
 
+		#requirements to pass level 1
+		if killCount == 40:
+			pass
+
 		if jimY < spaceRockY+100:
 			print("y cross over")
 			if jimX>spaceRockX and jimX < spaceRockX+100:
