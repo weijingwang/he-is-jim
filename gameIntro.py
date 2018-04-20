@@ -48,17 +48,17 @@ def gameIntro(surface):
                 pass
 
             if pictureCount == 0:
-                playVoice(Scene1)
+                playVoice(Scene0)
                 backImage = deskBG
                 jimX = 0
                 jimY = 50
-                sayWhat = 'Press Space'
+                sayWhat = 'Press Space and make sure to not move the mouse or press any other buttons'
             elif pictureCount == 1:
-                playVoice(Scene2)
+                playVoice(Scene1)
                 sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
                 
             elif pictureCount == 2:
-                #pygame.mixer.stop()
+                playVoice(Scene2)
                 sayWhat = 'and now plays the game "Frogs in the Night" every day.'
             elif pictureCount == 3:
                 sayWhat = 'Jim is lonely and the only "friends" he has are on the internet.'
