@@ -53,7 +53,7 @@ def gameIntro():
             elif pictureCount == 2:
                 sayWhat = 'and now plays the game "Frogs in the Night" every day.'
             elif pictureCount == 3:
-                sayWhat = 'Jim is lonely and the only "friends" he has are are the internet.'
+                sayWhat = 'Jim is lonely and the only "friends" he has are on the internet.'
             elif pictureCount == 4:
                 sayWhat = 'Today, there is a special event in "Frogs in the Night"'
             elif pictureCount == 5:
