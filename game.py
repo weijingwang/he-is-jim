@@ -145,8 +145,8 @@ def game():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 	while not done:
-		pygame.mixer.unpause()#background music always unpaused but when death
 		pygame.mixer.stop()#stop death sound
+		pygame.mixer.unpause()#background music always unpaused but when death
 
 		findRockLetter()
 		if (spaceRockY > 600):
@@ -196,9 +196,10 @@ def game():
 		if jimY < spaceRockY+100:
 			print("y cross over")
 			if jimX>spaceRockX and jimX < spaceRockX+100:
+				pygame.mixer.music.pause()#stop music
 				print("ALSO X CROSS???!!!")
 				print("you ded")
-				pygame.mixer.music.pause()#stop music
+				
 				gameOverMusic.play()
 				gameDeathSurface(screen)#death screen
 				killSpaceRock()# and space rock positions
