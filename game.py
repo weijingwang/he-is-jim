@@ -43,15 +43,12 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
-#load Kill Count Font
-font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
-
 def kill_count(count):
 	spaceRockTypeNumber = random.randrange(0,6)
-	
+	font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
 	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
 	screen.blit(killCountText,(0,0))#corner text score
-	#pygame.display.update()
+	pygame.display.update()
 
 def findRockLetter():
 	global spaceRockTypeNumber
@@ -96,17 +93,17 @@ def killSpaceRock():
 	#random choose next rock location
 	spaceRockX = random.randrange(0,700)
 	spaceRockY = -200
-	#increase spaceRockSpeed over time per button pressed
+	#increase spaceRockSpeed over time per button pressed, algorithm acceleration slower over time
 	if spaceRockSpeed <= 10:
-		spaceRockSpeed += 0.8
+		spaceRockSpeed += 0.5
 	elif spaceRockSpeed > 10 and spaceRockSpeed <= 50:
-		spaceRockSpeed += 0.6
+		spaceRockSpeed += 0.1
 	elif spaceRockSpeed > 50 and spaceRockSpeed <= 100:
-		spaceRockSpeed += 0.57
+		spaceRockSpeed += 0.07
 	elif spaceRockSpeed > 100 and spaceRockSpeed <= 150:
-		spaceRockSpeed += 0.55
+		spaceRockSpeed += 0.05
 	elif spaceRockSpeed > 150 and spaceRockSpeed <= 200:
-		spaceRockSpeed += 0.22
+		spaceRockSpeed += 0.02
 	#randomly selects next spacerock
 	spaceRockTypeNumber = random.randrange(0,6)
 	#random.choice(spaceRockLetterChoices)
@@ -150,7 +147,6 @@ def game():
 			spaceRockY = 0 - 100
 			spaceRockX = random.randrange(0,700)
 			spaceRockSpeed += 1
-			killCount -=1#if not kill rock, get penalty of -1 point
 			spaceRockTypeNumber = random.randrange(0,6)
 			print(spaceRockTypeNumber)
 			findRockLetter()
@@ -177,7 +173,6 @@ def game():
 					print("D pressed")
 					killSpaceRock()
 
-
 		#controls for jim
 		pressed = pygame.key.get_pressed()
 		if pressed[pygame.K_LEFT] and jimX>=0:
@@ -187,19 +182,12 @@ def game():
 			jimX+=7
 			backgroundCount+=1
 
-
-		#Conditions for death
-		if jimY < spaceRockY+100:
-			print("y cross over")
-			if jimX>spaceRockX and jimX < spaceRockX+100 and jimY:
-				print("you dead")
-				done = True
 		findRockLetter()
 		#print("spaceTypeLetter: " + spaceRockLetter)
 
 		screen.blit(gameBG3,(0,0))
 		spaceRock(spaceRockX,spaceRockY,rockSprite)
-		spaceRockY +=spaceRockSpeed
+		spaceRockY += spaceRockSpeed
 
 		jim(jimX,jimY)
 		#killCountScore('1')
