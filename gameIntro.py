@@ -18,7 +18,8 @@ dogeRight = pygame.image.load("assets/images/dogeMan.png")
 dogeLeft = pygame.image.load("assets/images/dogeMan1.png")
 deskBG = pygame.image.load("assets/images/background/deskBG.png")
 computerBG = pygame.image.load("assets/images/background/deskBG2.png")
-#doge
+#Sound Effects
+Scene1 = pygame.mixer.Sound.play("assets/music/introVoice/0.ogg")
 def gameIntro():
     done = False
     pictureCount = 0
@@ -49,9 +50,11 @@ def gameIntro():
                 jimY = 50
                 sayWhat = 'Press Space'
             elif pictureCount == 1:
+                pygame.mixer.stop()
                 sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
-                pygame.mixer.Sound.play()
+                Scene1.play()
             elif pictureCount == 2:
+                pygame.mixer.stop()
                 sayWhat = 'and now plays the game "Frogs in the Night" every day.'
             elif pictureCount == 3:
                 sayWhat = 'Jim is lonely and the only "friends" he has are on the internet.'
