@@ -44,12 +44,13 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
+#load font
+font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
+
 def kill_count(count):
 	spaceRockTypeNumber = random.randrange(0,6)
-	font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
 	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
 	screen.blit(killCountText,(0,0))#corner text score
-	pygame.display.update()
 
 def findRockLetter():
 	global spaceRockTypeNumber
