@@ -17,6 +17,9 @@ computerBG = pygame.image.load("assets/images/background/deskBG2.png")
 #Sound Effects
 Scene1 = pygame.mixer.Sound("assets/music/introVoice/0.ogg")
 
+def playVoice(whichVoice):
+    pygame.mixer.stop()
+    whichVoice.play()
 
 def gameIntro(surface):
     done = False
@@ -43,13 +46,13 @@ def gameIntro(surface):
                 pass
 
             if pictureCount == 0:
-                Scene1.play()
+                playVoice(Scene1)
                 backImage = deskBG
                 jimX = 0
                 jimY = 50
                 sayWhat = 'Press Space'
             elif pictureCount == 1:
-                #pygame.mixer.stop()
+                pygame.mixer.stop()
                 sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
                 
             elif pictureCount == 2:
