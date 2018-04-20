@@ -100,6 +100,15 @@ def gameIntro():
                 sayWhat = 'the magic doge is secret coder'
             elif pictureCount == 23:
                 sayWhat = 'and he typed: "wafuinwoq39df'
+            elif pictureCount == 24:
+                sayWhat = '"Boohoo hoo, no i will never win", said Jim as he raised his head'
+            elif pictureCount ==25:
+                sayWhat = '"NANI IS HAPPEN!?", Jim Shouted as he looked at his monitor'
+                jimX = 500
+                character2 = dogeRight
+                dogeX = 70
+            elif pictureCount == 26:
+                sayWhat ='"You..YY.YOU maake mmee wi-wi-w-win game!", Jim mumbled in amazement'
 
                 #FitN screen
 
