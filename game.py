@@ -31,7 +31,7 @@ musicOption = True
 # pygame.mixer.music.play(-1)
 
 #sound
-gameOverMusic = pygame.mixer.Sound("assets/music/gameOver.ogg")
+
 #objects
 def jim(x,y,surface):
 	surface.blit(jimPic,(x,y))#Jim
@@ -98,16 +98,16 @@ def killSpaceRock():
 	spaceRockX = random.randrange(0,700)
 	spaceRockY = -200
 	#increase spaceRockSpeed over time per button pressed, algorithm acceleration slower over time
-	if spaceRockSpeed <= 10:
-		spaceRockSpeed += 0.5
+	if spaceRockSpeed <= 13:
+		spaceRockSpeed += 1
 	elif spaceRockSpeed > 10 and spaceRockSpeed <= 50:
-		spaceRockSpeed += 0.1
+		spaceRockSpeed += 0.8
 	elif spaceRockSpeed > 50 and spaceRockSpeed <= 100:
-		spaceRockSpeed += 0.07
+		spaceRockSpeed += 0.37
 	elif spaceRockSpeed > 100 and spaceRockSpeed <= 150:
-		spaceRockSpeed += 0.05
+		spaceRockSpeed += 0.35
 	elif spaceRockSpeed > 150 and spaceRockSpeed <= 200:
-		spaceRockSpeed += 0.02
+		spaceRockSpeed += 0.12
 	#randomly selects next spacerock
 	spaceRockTypeNumber = random.randrange(0,6)
 	#random.choice(spaceRockLetterChoices)
@@ -136,7 +136,7 @@ def game(surface):
 	jimY = 470
 	spaceRockX = 0
 	spaceRockY = 0
-	spaceRockSpeed = 8
+	spaceRockSpeed = 9
 	killCount = 0
 	jumbiX = 0
 	jumbiY = -1000
@@ -164,22 +164,22 @@ def game(surface):
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_a and spaceRockLetter == "A":
 					print ("a pressed")
-					killSpaceRock(surface)
+					killSpaceRock()
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
 					print ("b pressed")
-					killSpaceRock(surface)
+					killSpaceRock()
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
 					print ("c pressed")
-					killSpaceRock(surface)
+					killSpaceRock()
 				elif event.key == pygame.K_o and spaceRockLetter == "O":
 					print("o pressed")
-					killSpaceRock(surface)
+					killSpaceRock()
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
 					print("h pressed")
-					killSpaceRock(surface)
+					killSpaceRock()
 				elif event.key == pygame.K_d and spaceRockLetter == "D":
 					print("D pressed")
-					killSpaceRock(surface)
+					killSpaceRock()
 
 		#controls for jim
 		pressed = pygame.key.get_pressed()
@@ -205,6 +205,7 @@ def game(surface):
 				print("play sound")
 				killSpaceRock()# and space rock positions
 				killCount = 0 #reset score
+				spaceRockSpeed = 9#speed reset
 
 
 		findRockLetter()
