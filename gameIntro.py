@@ -114,7 +114,19 @@ def gameIntro():
                 dogeX = -110
                 sayWhat = "Jim is stunned and decides to become Doge's first worshipper"
             elif pictureCount ==28:
-                pass
+                sayWhat = '"here is one of my favorite cookies, here try one", Jim says to the doge'
+            elif pictureCount ==29:
+                sayWhat = '"No thanks, maybe next time", the magic Doge replied.'
+            elif pictureCount == 30:
+                sayWhat = '"no problemo", said the Jim'
+            elif pictureCount == 31:
+                sayWhat = '"By the way thanks for becoming my first follower",doge say'
+            elif pictureCount ==32:
+                sayWhat = '"much thank much wowzies"'
+            elif pictureCount ==33:
+                sayWhat = '"Oh, I know! wanna see something cool?"'
+            elif pictureCount == 34:
+                sayWhat = '"sure what is???", Jim say again with curiousity'
                 #FitN screen
 
         screen.blit(backImage,(0,0))
