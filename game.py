@@ -1,6 +1,7 @@
 import pygame
 import random
 from displayText import *
+from gameDeath import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -26,11 +27,11 @@ spaceRockTypeNumber = random.randrange(0,6)
 musicOption = True
 
 #music
-if (musicOption == True):
-	pygame.mixer.music.load("assets/music/HopeForADog.mp3")
-	pygame.mixer.music.set_volume(0.5)
-	pygame.mixer.music.play(-1)
-
+pygame.mixer.music.load("assets/music/HopeForADog.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+#sound
+gameOverMusic = pygame.mixer.Sound("assets/music/gameOver.ogg")
 #objects
 def jim(x,y):
 	screen.blit(jimPic,(x,y))#Jim
@@ -45,12 +46,13 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
+
+#load font
+font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
 def kill_count(count):
 	spaceRockTypeNumber = random.randrange(0,6)
-	font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
 	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
 	screen.blit(killCountText,(0,0))#corner text score
-	pygame.display.update()
 
 def findRockLetter():
 	global spaceRockTypeNumber
@@ -143,6 +145,9 @@ def game():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 	while not done:
+		pygame.mixer.unpause()#background music always unpaused but when death
+		pygame.mixer.stop()#stop death sound
+
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
@@ -183,6 +188,22 @@ def game():
 		if pressed[pygame.K_RIGHT] and jimX<=740:
 			jimX+=7
 			backgroundCount+=1
+
+		#requirements to pass level 1
+		if killCount == 40:
+			pass
+
+		if jimY < spaceRockY+100:
+			print("y cross over")
+			if jimX>spaceRockX and jimX < spaceRockX+100:
+				print("ALSO X CROSS???!!!")
+				print("you ded")
+				pygame.mixer.music.pause()#stop music
+				gameOverMusic.play()
+				gameDeathSurface(screen)#death screen
+				killSpaceRock()# and space rock positions
+				killCount = 0 #reset score
+
 
 		findRockLetter()
 		#print("spaceTypeLetter: " + spaceRockLetter)
