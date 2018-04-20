@@ -15,7 +15,8 @@ dogeLeft = pygame.image.load("assets/images/dogeMan1.png")
 deskBG = pygame.image.load("assets/images/background/deskBG.png")
 computerBG = pygame.image.load("assets/images/background/deskBG2.png")
 #Sound Effects
-Scene1 = pygame.mixer.Sound("assets/music/introVoice/0.ogg")
+Scene0 = pygame.mixer.Sound("assets/music/introVoice/0.ogg")
+Scene1 = pygame.mixer.Sound("assets/music/introVoice/1.ogg")
 
 def playVoice(whichVoice):
     pygame.mixer.stop()
@@ -52,7 +53,7 @@ def gameIntro(surface):
                 jimY = 50
                 sayWhat = 'Press Space'
             elif pictureCount == 1:
-                pygame.mixer.stop()
+                playVoice(Scene2)
                 sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
                 
             elif pictureCount == 2:
