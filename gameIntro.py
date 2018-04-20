@@ -80,9 +80,13 @@ def gameIntro():
             elif pictureCount == 14:
                 sayWhat = '...'
             elif pictureCount == 15:
-                dogeX = 200
-                dogeY = 200
+                dogeX = 100
+                dogeY = 100
                 sayWhat = 'WOOOWWWZZZ'
+            elif pictureCount == 16:
+                sayWhat = '"WHAHAHAHATATATATAT GET OF MY KEYBOARD", Jim shouted'
+            elif pictureCount == 17:
+                sayWhat = '"I AM GOING TO LOSE THE GAME WHAT THE HECK"'
 
                 #FitN screen
 
