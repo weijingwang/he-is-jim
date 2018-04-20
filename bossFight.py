@@ -3,7 +3,6 @@ import pygame
 import os
 import random
 from displayText import * #KYLER DO UR CREDITS
-from menu import *
 from credits import *
 pygame.mixer.pre_init()
 pygame.init()
@@ -23,8 +22,9 @@ def bossLevel():
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
-		screen.fill(black)
-		messageText("Jim",100,100,100,screen,255,255,255)
+		screen.blit(gameBG3,(0,0))
+		#messageText("Jim",100,100,100,screen,255,255,255)
+		print("EBFKSBDS")
 		pygame.display.update()
 bossLevel()
 
