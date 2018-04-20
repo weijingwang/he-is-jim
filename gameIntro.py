@@ -30,6 +30,8 @@ Scene10 = pygame.mixer.Sound("assets/music/introVoice/10.ogg")
 Scene15 = pygame.mixer.Sound("assets/music/introVoice/15.ogg")
 Scene16 = pygame.mixer.Sound("assets/music/introVoice/16.ogg")
 Scene17 = pygame.mixer.Sound("assets/music/introVoice/17.ogg")
+Scene45 = pygame.mixer.Sound("assets/music/introVoice/45.ogg")
+Scene46 = pygame.mixer.Sound("assets/music/introVoice/46.ogg")
 
 
 def playVoice(whichVoice):
@@ -69,7 +71,7 @@ def gameIntro(surface):
             elif pictureCount == 1:
                 playVoice(Scene1)
                 sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
-                
+
             elif pictureCount == 2:
                 playVoice(Scene2)
                 sayWhat = 'and now plays the game "Frogs in the Night" every day.'
@@ -187,8 +189,10 @@ def gameIntro(surface):
                 dogeX = 10000
                 backImage = farewell
                 sayWhat = 'And so Jim flew away to see if he could reach the second world and get co-leader'
+                playVoice(Scene45)
             elif pictureCount == 46:
                 sayWhat = 'Go Jim! Good Luck Jim! Let us see if you are cool enough to join the kool klub!'
+                playVoice(Scene46)
             elif pictureCount == 47:
                 pygame.mixer.music.stop()
                 pygame.mixer.music.load("assets/music/HopeForADog.mp3")
