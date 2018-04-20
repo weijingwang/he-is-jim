@@ -7,6 +7,7 @@ from buttons import *
 from credits import *
 from options import *
 from help import *
+from gameIntro import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -64,7 +65,8 @@ def main_menu():
 				if event.key == pygame.K_RETURN:
 					if mainCount == 0:#start
 						#import the game
-						pass
+						pygame.mixer.music.stop()#stop music from main menu
+						gameIntro(screen)
 					elif mainCount == 1:#Options
 						#import the Options
 						options(screen)

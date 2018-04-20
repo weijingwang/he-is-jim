@@ -5,11 +5,7 @@ from fadetoWhite import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
-#screen
-x = 800
-y = 600
-black = ((0,0,0))
-screen = pygame.display.set_mode((x,y))
+
 
 #images
 jimVN = pygame.image.load("assets/images/jimVN.png")
@@ -21,7 +17,8 @@ computerBG = pygame.image.load("assets/images/background/deskBG2.png")
 #Sound Effects
 Scene1 = pygame.mixer.Sound("assets/music/introVoice/0.ogg")
 
-def gameIntro():
+
+def gameIntro(surface):
     done = False
     pictureCount = 0
     pictureNumber = 10
@@ -46,16 +43,17 @@ def gameIntro():
                 pass
 
             if pictureCount == 0:
+                Scene1.play()
                 backImage = deskBG
                 jimX = 0
                 jimY = 50
                 sayWhat = 'Press Space'
             elif pictureCount == 1:
-                pygame.mixer.stop()
+                #pygame.mixer.stop()
                 sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
-                Scene1.play()
+                
             elif pictureCount == 2:
-                pygame.mixer.stop()
+                #pygame.mixer.stop()
                 sayWhat = 'and now plays the game "Frogs in the Night" every day.'
             elif pictureCount == 3:
                 sayWhat = 'Jim is lonely and the only "friends" he has are on the internet.'
@@ -132,7 +130,7 @@ def gameIntro():
                 sayWhat = '"Oh, I know! wanna see something cool?"'
             elif pictureCount == 34:
                 sayWhat = '"sure what is???", Jim say again with curiousity'
-                #FitN screen
+                #FitN surface
             elif pictureCount ==35:
                 sayWhat = '...'
             elif pictureCount == 36:
@@ -148,19 +146,17 @@ def gameIntro():
                 sayWhat = '"THE OTHER WORLD, so there are TWO WORLDS,"'
                 character2 = dogeLeft
             elif pictureCount == 41:
-                character2 == dogeRight
                 sayWhat = '"I give you co-leader okok? BUT when flying to other world,"'
             elif pictureCount == 42:
                 sayWhat = '"There are evil space rocks that might kill you."'
+                character2 == dogeRight
             elif pictureCount == 43:
                 sayWhat = '"so what you wanna do is press keys on keyboard and kill space rocks yes?"'
             elif pictureCount == 44:
                 sayWhat = '"All right I got it I am in", replied Jim with exitement'
 
-        screen.blit(backImage,(0,0))
-        screen.blit(character1,(jimX,jimY))
-        screen.blit(character2,(dogeX,dogeY))
-        messageText(sayWhat,50,550,20,screen,255,255,255,"Roboto")
+        surface.blit(backImage,(0,0))
+        surface.blit(character1,(jimX,jimY))
+        surface.blit(character2,(dogeX,dogeY))
+        messageText(sayWhat,50,550,20,surface,255,255,255,"Roboto")
         pygame.display.update()
-
-gameIntro()
