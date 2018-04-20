@@ -119,7 +119,6 @@ def killSpaceRock():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 def game():
-	
 	global jimX
 	global jimY
 	global spaceRockX
@@ -147,7 +146,8 @@ def game():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 	while not done:
-		pygame.mixer.music.unpause()
+		pygame.mixer.stop()#stop annoying death sound
+		pygame.mixer.music.unpause()#unpause background music
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
