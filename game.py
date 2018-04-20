@@ -145,7 +145,9 @@ def game():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 	while not done:
-		pygame.mixer.unpause()
+		pygame.mixer.unpause()#background music always unpaused but when death
+		pygame.mixer.stop()#stop death sound
+
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
