@@ -99,9 +99,9 @@ def killSpaceRock():
 	spaceRockY = -200
 	#increase spaceRockSpeed over time per button pressed, algorithm acceleration slower over time
 	if spaceRockSpeed <= 13:
-		spaceRockSpeed += 1
-	elif spaceRockSpeed > 10 and spaceRockSpeed <= 50:
 		spaceRockSpeed += 0.8
+	elif spaceRockSpeed > 10 and spaceRockSpeed <= 50:
+		spaceRockSpeed += 0.5
 	elif spaceRockSpeed > 50 and spaceRockSpeed <= 100:
 		spaceRockSpeed += 0.37
 	elif spaceRockSpeed > 100 and spaceRockSpeed <= 150:
@@ -191,7 +191,7 @@ def game(surface):
 			backgroundCount+=1
 
 		#requirements to pass level 1
-		if killCount == 40:
+		if killCount == 35:
 			pass#LOAD BOSS LEVEL
 
 		if jimY < spaceRockY+100:
