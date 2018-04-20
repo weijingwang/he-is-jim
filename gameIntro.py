@@ -132,6 +132,25 @@ def gameIntro():
                 sayWhat = '...'
             elif pictureCount == 36:
                 sayWhat='doge does magic ritual DEFINITELY NOT EVIL'
+            elif pictureCount ==37:
+                character1 = jimVNBuff
+                sayWhat = 'WHA NANI HAPPEN!!??'
+            elif pictureCount == 38:
+                sayWhat = '"okok so you can fly cool yes?", doge explains'
+            elif pictureCount == 39:
+                sayWhat = '"But what is even cooler is if you fly to----"'
+            elif pictureCount == 40:
+                sayWhat = '"THE OTHER WORLD, so there are TWO WORLDS,"'
+                character2 = dogeLeft
+            elif pictureCount == 41:
+                character2 == dogeRight
+                sayWhat = '"I give you co-leader okok? BUT when flying to other world,"'
+            elif pictureCount == 42:
+                sayWhat = '"There are evil space rocks that might kill you."'
+            elif pictureCount == 43:
+                sayWhat = '"so what you wanna do is press keys on keyboard and kill space rocks yes?"'
+            elif pictureCount == 44:
+                sayWhat = '"All right I got it I am in", replied Jim with exitement'
 
         screen.blit(backImage,(0,0))
         screen.blit(character1,(jimX,jimY))
