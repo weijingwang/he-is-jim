@@ -19,7 +19,8 @@ dogeLeft = pygame.image.load("assets/images/dogeMan1.png")
 deskBG = pygame.image.load("assets/images/background/deskBG.png")
 computerBG = pygame.image.load("assets/images/background/deskBG2.png")
 #Sound Effects
-Scene1 = pygame.mixer.Sound.play("assets/music/introVoice/0.ogg")
+Scene1 = pygame.mixer.Sound("assets/music/introVoice/0.ogg")
+
 def gameIntro():
     done = False
     pictureCount = 0
