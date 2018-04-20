@@ -215,7 +215,6 @@ def game(surface):
 		kill_count(killCount,surface)
 
 			#score + 1
-		jumbiBoss(jumbiX,jumbiY,False,surface)
 		#print (killCount)
 		pygame.display.update()
 #game()
