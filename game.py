@@ -151,6 +151,7 @@ def game():
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
+			killCount -= 1 #score penalty if no kill
 			spaceRockY = 0 - 100
 			spaceRockX = random.randrange(0,700)
 			spaceRockSpeed += 1
