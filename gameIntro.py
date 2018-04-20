@@ -84,7 +84,7 @@ def gameIntro():
                 dogeY = 100
                 sayWhat = 'WOOOWWWZZZ'
             elif pictureCount == 16:
-                sayWhat = '"WHAHAHAHATATATATAT GET OF MY KEYBOARD", Jim shouted'
+                sayWhat = '"WHAHAHAHATATATATAT GET OFF MY KEYBOARD", Jim shouted'
             elif pictureCount == 17:
                 sayWhat = '"I AM GOING TO LOSE THE GAME WHAT THE HECK"'
             elif pictureCount ==18:
