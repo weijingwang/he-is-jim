@@ -147,7 +147,7 @@ def game():
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
-			spaceRockY = 0 - 200
+			spaceRockY = 0 - 100
 			spaceRockX = random.randrange(0,700)
 			spaceRockSpeed += 1
 			spaceRockTypeNumber = random.randrange(0,6)
