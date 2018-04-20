@@ -128,6 +128,10 @@ def gameIntro():
             elif pictureCount == 34:
                 sayWhat = '"sure what is???", Jim say again with curiousity'
                 #FitN screen
+            elif pictureCount ==35:
+                sayWhat = '...'
+            elif pictureCount == 36:
+                sayWhat='doge does magic ritual DEFINITELY NOT EVIL'
 
         screen.blit(backImage,(0,0))
         screen.blit(character1,(jimX,jimY))
