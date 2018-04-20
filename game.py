@@ -26,9 +26,10 @@ spaceRockTypeNumber = random.randrange(0,6)
 musicOption = True
 
 #music
-pygame.mixer.music.load("assets/music/HopeForADog.mp3")
-pygame.mixer.music.set_volume(0.5)
-pygame.mixer.music.play(-1)
+# pygame.mixer.music.load("assets/music/HopeForADog.mp3")
+# pygame.mixer.music.set_volume(0.5)
+# pygame.mixer.music.play(-1)
+
 #sound
 gameOverMusic = pygame.mixer.Sound("assets/music/gameOver.ogg")
 #objects
@@ -201,6 +202,7 @@ def game(surface):
 				pygame.mixer.music.pause()#stop music
 				gameDeathSurface(surface)#death screen
 				gameOverMusic.play()
+				print("play sound")
 				killSpaceRock()# and space rock positions
 				killCount = 0 #reset score
 
