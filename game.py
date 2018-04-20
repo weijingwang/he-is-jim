@@ -177,6 +177,7 @@ def game():
 					print("D pressed")
 					killSpaceRock()
 
+
 		#controls for jim
 		pressed = pygame.key.get_pressed()
 		if pressed[pygame.K_LEFT] and jimX>=0:
@@ -186,6 +187,13 @@ def game():
 			jimX+=7
 			backgroundCount+=1
 
+
+		#Conditions for death
+		if jimY < spaceRockY+100:
+			print("y cross over")
+			if jimX>spaceRockX and jimX < spaceRockX+100 and jimY:
+				print("you dead")
+				done = True
 		findRockLetter()
 		#print("spaceTypeLetter: " + spaceRockLetter)
 
