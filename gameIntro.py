@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import pygame
-from displayText import * 
+from displayText import *
 from fadetoWhite import *
 pygame.mixer.pre_init()
 pygame.init()
@@ -30,7 +30,7 @@ def gameIntro():
     character2 = dogeRight
     dogeX = 100000
     dogeY = 0
-    sayWhat = 'i hate mondays'
+    sayWhat = None
     while not done:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -50,6 +50,7 @@ def gameIntro():
                 sayWhat = 'Press Space'
             elif pictureCount == 1:
                 sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
+                pygame.mixer.Sound.play()
             elif pictureCount == 2:
                 sayWhat = 'and now plays the game "Frogs in the Night" every day.'
             elif pictureCount == 3:
