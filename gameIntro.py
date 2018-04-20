@@ -13,6 +13,9 @@ screen = pygame.display.set_mode((x,y))
 
 #images
 jimVN = pygame.image.load("assets/images/jimVN.png")
+jimVNBuff = pygame.image.load("assets/images/jimVNCool.png")
+dogeRight = pygame.image.load("assets/images/dogeMan.png")
+dogeLeft = pygame.image.load("assets/images/dogeMan1.png")
 deskBG = pygame.image.load("assets/images/background/deskBG.png")
 computerBG = pygame.image.load("assets/images/background/deskBG2.png")
 #doge
@@ -24,8 +27,8 @@ def gameIntro():
     character1 = jimVN
     jimX = 0
     jimY = 50
-    character2 = "doge"
-    dogeX = 0
+    character2 = dogeRight
+    dogeX = 100000
     dogeY = 0
     sayWhat = 'i hate mondays'
     while not done:
@@ -76,12 +79,16 @@ def gameIntro():
                 sayWhat = '.. .'
             elif pictureCount == 14:
                 sayWhat = '...'
+            elif pictureCount == 15:
+                dogeX = 200
+                dogeY = 200
+                sayWhat = 'WOOOWWWZZZ'
 
                 #FitN screen
 
         screen.blit(backImage,(0,0))
         screen.blit(character1,(jimX,jimY))
-        #screen.blit(character2,(jimX,jimY))
+        screen.blit(character2,(dogeX,dogeY))
         messageText(sayWhat,50,550,20,screen,255,255,255,"Roboto")
         pygame.display.update()
 
