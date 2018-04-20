@@ -43,12 +43,15 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
+#load Kill Count Font
+font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
+
 def kill_count(count):
 	spaceRockTypeNumber = random.randrange(0,6)
-	font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
+	
 	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
 	screen.blit(killCountText,(0,0))#corner text score
-	pygame.display.update()
+	#pygame.display.update()
 
 def findRockLetter():
 	global spaceRockTypeNumber
@@ -95,15 +98,15 @@ def killSpaceRock():
 	spaceRockY = -200
 	#increase spaceRockSpeed over time per button pressed
 	if spaceRockSpeed <= 10:
-		spaceRockSpeed += 0.3
+		spaceRockSpeed += 0.8
 	elif spaceRockSpeed > 10 and spaceRockSpeed <= 50:
-		spaceRockSpeed += 0.1
+		spaceRockSpeed += 0.6
 	elif spaceRockSpeed > 50 and spaceRockSpeed <= 100:
-		spaceRockSpeed += 0.07
+		spaceRockSpeed += 0.57
 	elif spaceRockSpeed > 100 and spaceRockSpeed <= 150:
-		spaceRockSpeed += 0.05
+		spaceRockSpeed += 0.55
 	elif spaceRockSpeed > 150 and spaceRockSpeed <= 200:
-		spaceRockSpeed += 0.02
+		spaceRockSpeed += 0.22
 	#randomly selects next spacerock
 	spaceRockTypeNumber = random.randrange(0,6)
 	#random.choice(spaceRockLetterChoices)
@@ -144,7 +147,7 @@ def game():
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
-			spaceRockY = 0 - 100
+			spaceRockY = 0 - 200
 			spaceRockX = random.randrange(0,700)
 			spaceRockSpeed += 1
 			spaceRockTypeNumber = random.randrange(0,6)
