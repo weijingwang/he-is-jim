@@ -192,7 +192,7 @@ def game(surface):
 
 		#requirements to pass level 1
 		if killCount == 40:
-			pass
+			pass#LOAD BOSS LEVEL
 
 		if jimY < spaceRockY+100:
 			print("y cross over")
@@ -205,7 +205,7 @@ def game(surface):
 				print("play sound")
 				killSpaceRock()# and space rock positions
 				killCount = 0 #reset score
-				spaceRockSpeed = 9#speed reset
+				spaceRockSpeed = 9#speed reset	
 
 
 		findRockLetter()
