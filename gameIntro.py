@@ -2,6 +2,7 @@
 import pygame
 from displayText import *
 from fadetoWhite import *
+from game import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -14,6 +15,7 @@ dogeRight = pygame.image.load("assets/images/dogeMan.png")
 dogeLeft = pygame.image.load("assets/images/dogeMan1.png")
 deskBG = pygame.image.load("assets/images/background/deskBG.png")
 computerBG = pygame.image.load("assets/images/background/deskBG2.png")
+farewell = pygame.image.load("assets/images/background/farewell.png")
 #Sound Effects
 Scene0 = pygame.mixer.Sound("assets/music/introVoice/0.ogg")
 Scene1 = pygame.mixer.Sound("assets/music/introVoice/1.ogg")
@@ -159,7 +161,16 @@ def gameIntro(surface):
                 sayWhat = '"so what you wanna do is press keys on keyboard and kill space rocks yes?"'
             elif pictureCount == 44:
                 sayWhat = '"All right I got it I am in", replied Jim with exitement'
-
+            elif pictureCount == 45:
+                jimX = 10000
+                dogeX = 10000
+                backImage = farewell
+                sayWhat = 'And so Jim flew away to see if he could reach the second world and get co-leader'
+            elif pictureCount == 46:
+                sayWhat = 'Go Jim! Good Luck Jim! Let us see if you are cool enough to join the kool klub!'
+            elif pictureCount == 47:
+                pygame.mixer.music.stop()
+                #game(screen) # don't add yet since still developing
         surface.blit(backImage,(0,0))
         surface.blit(character1,(jimX,jimY))
         surface.blit(character2,(dogeX,dogeY))
