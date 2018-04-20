@@ -17,6 +17,7 @@ computerBG = pygame.image.load("assets/images/background/deskBG2.png")
 #Sound Effects
 Scene0 = pygame.mixer.Sound("assets/music/introVoice/0.ogg")
 Scene1 = pygame.mixer.Sound("assets/music/introVoice/1.ogg")
+Scene2 = pygame.mixer.Sound("assets/music/introVoice/2.ogg")
 
 def playVoice(whichVoice):
     pygame.mixer.stop()
