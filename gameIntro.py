@@ -87,6 +87,11 @@ def gameIntro():
                 sayWhat = '"WHAHAHAHATATATATAT GET OF MY KEYBOARD", Jim shouted'
             elif pictureCount == 17:
                 sayWhat = '"I AM GOING TO LOSE THE GAME WHAT THE HECK"'
+            elif pictureCount ==18:
+                character2 = dogeLeft
+                sayWhat = '"No...", said the magic doge'
+            elif pictureCount ==19:
+                sayWhat = '"watch this my man"'
 
                 #FitN screen
 
