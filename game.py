@@ -40,12 +40,6 @@ def spaceRock(x,y,rocktype,surface):
 	global rockSprite
 	surface.blit(rocktype,(x,y))
 
-def jumbiBoss(x,y,angery,surface):
-	if angery == True:
-		surface.blit(jumbi2,(x,y))
-	else:
-		surface.blit(jumbi1,(x,y))
-
 
 #load font
 font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
