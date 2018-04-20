@@ -1,7 +1,6 @@
 import pygame
 import random
 from displayText import *
-from gameDeath import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -15,23 +14,20 @@ gameBG2 = pygame.image.load("assets/images/background/stars2BG.png")
 gameBG3 = pygame.image.load("assets/images/background/stars3BG.png")
 gameBG4 = pygame.image.load("assets/images/background/stars4BG.png")
 jimPic = pygame.image.load("assets/images/jim.png")
-ARock = pygame.image.load("assets/images/ARock.png")
-BRock = pygame.image.load("assets/images/BRock.png")
-CRock = pygame.image.load("assets/images/CRock.png")
-ORock = pygame.image.load("assets/images/ORock.png")
-HRock = pygame.image.load("assets/images/HRock.png")
-DRock = pygame.image.load("assets/images/DRock.png")
+ARock = pygame.image.load("assets/images/rocks/ARock.png")
+BRock = pygame.image.load("assets/images/rocks/BRock.png")
+CRock = pygame.image.load("assets/images/rocks/CRock.png")
+ORock = pygame.image.load("assets/images/rocks/ORock.png")
+HRock = pygame.image.load("assets/images/rocks/HRock.png")
+DRock = pygame.image.load("assets/images/rocks/DRock.png")
 jumbi1 = pygame.image.load("assets/images/jumbiBoss.png")
 jumbi2 = pygame.image.load("assets/images/jumbiBoss1.png")
 spaceRockTypeNumber = random.randrange(0,6)
 
 #music
-pygame.mixer.music.load("assets/music/HopeForADog.mp3")#load music
+pygame.mixer.music.load("assets/music/HopeForADog.mp3")
 pygame.mixer.music.set_volume(0.5)
-pygame.mixer.music.play(-1)#repeat music
-
-#sound effects
-gameOverMusic = pygame.mixer.Sound("assets/music/gameOver.ogg")
+pygame.mixer.music.play(-1)
 
 #objects
 def jim(x,y):
@@ -47,13 +43,12 @@ def jumbiBoss(x,y,angery):
 	else:
 		screen.blit(jumbi1,(x,y))
 
-#load font
-font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
-
 def kill_count(count):
 	spaceRockTypeNumber = random.randrange(0,6)
+	font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
 	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
 	screen.blit(killCountText,(0,0))#corner text score
+	pygame.display.update()
 
 def findRockLetter():
 	global spaceRockTypeNumber
@@ -146,8 +141,6 @@ def game():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 	while not done:
-		pygame.mixer.stop()#stop annoying death sound
-		pygame.mixer.music.unpause()#unpause background music
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
