@@ -92,6 +92,14 @@ def gameIntro():
                 sayWhat = '"No...", said the magic doge'
             elif pictureCount ==19:
                 sayWhat = '"watch this my man"'
+            elif pictureCount ==20:
+                dogeY = 10
+            elif pictureCount == 21:
+                dogeY = 70
+            elif pictureCount == 22:
+                sayWhat = 'the magic doge is secret coder'
+            elif pictureCount == 23:
+                sayWhat = 'and he typed: "wafuinwoq39df'
 
                 #FitN screen
 
