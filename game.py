@@ -31,7 +31,7 @@ pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)#repeat music
 
 #sound effects
-pygame.mixer.music.load("assets/music/gameOver.mp3")
+gameOverMusic = pygame.mixer.Sound("assets/music/gameOver.ogg")
 
 #objects
 def jim(x,y):
@@ -119,6 +119,7 @@ def killSpaceRock():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 def game():
+	
 	global jimX
 	global jimY
 	global spaceRockX
@@ -194,6 +195,7 @@ def game():
 				print("ALSO X CROSS???!!!")
 				print("you ded")
 				pygame.mixer.music.pause()#stop music
+				gameOverMusic.play()
 				gameDeathSurface(screen)#death screen
 				killSpaceRock()# and space rock positions
 				killCount = 0 #reset score
