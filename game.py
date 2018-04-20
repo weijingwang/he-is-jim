@@ -9,7 +9,6 @@ pygame.font.init()
 x = 800
 y = 600
 black = ((0,0,0))
-screen = pygame.display.set_mode((x,y))
 gameBG1 = pygame.image.load("assets/images/background/stars1BG.png")
 gameBG2 = pygame.image.load("assets/images/background/stars2BG.png")
 gameBG3 = pygame.image.load("assets/images/background/stars3BG.png")
@@ -33,26 +32,26 @@ pygame.mixer.music.play(-1)
 #sound
 gameOverMusic = pygame.mixer.Sound("assets/music/gameOver.ogg")
 #objects
-def jim(x,y):
-	screen.blit(jimPic,(x,y))#Jim
+def jim(x,y,surface):
+	surface.blit(jimPic,(x,y))#Jim
 
-def spaceRock(x,y,rocktype):
+def spaceRock(x,y,rocktype,surface):
 	global rockSprite
-	screen.blit(rocktype,(x,y))
+	surface.blit(rocktype,(x,y))
 
-def jumbiBoss(x,y,angery):
+def jumbiBoss(x,y,angery,surface):
 	if angery == True:
-		screen.blit(jumbi2,(x,y))
+		surface.blit(jumbi2,(x,y))
 	else:
-		screen.blit(jumbi1,(x,y))
+		surface.blit(jumbi1,(x,y))
 
 
 #load font
 font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 18)
-def kill_count(count):
+def kill_count(count,surface):
 	spaceRockTypeNumber = random.randrange(0,6)
 	killCountText = font.render("Kills: "+str(count), True, (255, 255, 255))
-	screen.blit(killCountText,(0,0))#corner text score
+	surface.blit(killCountText,(0,0))#corner text score
 
 def findRockLetter():
 	global spaceRockTypeNumber
@@ -117,7 +116,7 @@ def killSpaceRock():
 	killCount +=1
 	spaceRockTypeNumber = random.randrange(0,6)
 
-def game():
+def game(surface):
 	global jimX
 	global jimY
 	global spaceRockX
@@ -164,22 +163,22 @@ def game():
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_a and spaceRockLetter == "A":
 					print ("a pressed")
-					killSpaceRock()
+					killSpaceRock(surface)
 				elif event.key == pygame.K_b and spaceRockLetter == "B":
 					print ("b pressed")
-					killSpaceRock()
+					killSpaceRock(surface)
 				elif event.key == pygame.K_c and spaceRockLetter == "C":
 					print ("c pressed")
-					killSpaceRock()
+					killSpaceRock(surface)
 				elif event.key == pygame.K_o and spaceRockLetter == "O":
 					print("o pressed")
-					killSpaceRock()
+					killSpaceRock(surface)
 				elif event.key == pygame.K_h and spaceRockLetter == "H":
 					print("h pressed")
-					killSpaceRock()
+					killSpaceRock(surface)
 				elif event.key == pygame.K_d and spaceRockLetter == "D":
 					print("D pressed")
-					killSpaceRock()
+					killSpaceRock(surface)
 
 		#controls for jim
 		pressed = pygame.key.get_pressed()
@@ -200,7 +199,7 @@ def game():
 				print("ALSO X CROSS???!!!")
 				print("you ded")
 				pygame.mixer.music.pause()#stop music
-				gameDeathSurface(screen)#death screen
+				gameDeathSurface(surface)#death screen
 				gameOverMusic.play()
 				killSpaceRock()# and space rock positions
 				killCount = 0 #reset score
@@ -209,17 +208,17 @@ def game():
 		findRockLetter()
 		#print("spaceTypeLetter: " + spaceRockLetter)
 
-		screen.blit(gameBG3,(0,0))
-		spaceRock(spaceRockX,spaceRockY,rockSprite)
+		surface.blit(gameBG3,(0,0))
+		spaceRock(spaceRockX,spaceRockY,rockSprite,surface)
 		spaceRockY += spaceRockSpeed
 
-		jim(jimX,jimY)
+		jim(jimX,jimY,surface)
 		#killCountScore('1')
 		########
-		kill_count(killCount)
+		kill_count(killCount,surface)
 
 			#score + 1
-		jumbiBoss(jumbiX,jumbiY,False)
+		jumbiBoss(jumbiX,jumbiY,False,surface)
 		#print (killCount)
 		pygame.display.update()
 #game()

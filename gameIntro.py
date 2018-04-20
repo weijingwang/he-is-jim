@@ -2,7 +2,7 @@
 import pygame
 from displayText import *
 from fadetoWhite import *
-#from game import * #later
+from game import * #later
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -170,7 +170,7 @@ def gameIntro(surface):
                 sayWhat = 'Go Jim! Good Luck Jim! Let us see if you are cool enough to join the kool klub!'
             elif pictureCount == 47:
                 pygame.mixer.music.stop()
-                #game(screen) # don't add yet since still developing
+                game(surface) # don't add yet since still developing
         surface.blit(backImage,(0,0))
         surface.blit(character1,(jimX,jimY))
         surface.blit(character2,(dogeX,dogeY))
