@@ -222,5 +222,5 @@ def game():
 		jumbiBoss(jumbiX,jumbiY,False)
 		#print (killCount)
 		pygame.display.update()
-game()
+#game()
 #spaceRockTypeNumber = random.randrange(0,6)

@@ -2,7 +2,7 @@
 import pygame
 from displayText import *
 from fadetoWhite import *
-from game import *
+#from game import * #later
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
