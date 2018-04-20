@@ -26,9 +26,12 @@ jumbi2 = pygame.image.load("assets/images/jumbiBoss1.png")
 spaceRockTypeNumber = random.randrange(0,6)
 
 #music
-pygame.mixer.music.load("assets/music/HopeForADog.mp3")
+pygame.mixer.music.load("assets/music/HopeForADog.mp3")#load music
 pygame.mixer.music.set_volume(0.5)
-pygame.mixer.music.play(-1)
+pygame.mixer.music.play(-1)#repeat music
+
+#sound effects
+pygame.mixer.music.load("assets/music/gameOver.mp3")
 
 #objects
 def jim(x,y):
@@ -143,6 +146,7 @@ def game():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 	while not done:
+		pygame.mixer.music.unpause()
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
@@ -183,6 +187,17 @@ def game():
 		if pressed[pygame.K_RIGHT] and jimX<=740:
 			jimX+=7
 			backgroundCount+=1
+
+		if jimY < spaceRockY+100:
+			print("y cross over")
+			if jimX>spaceRockX and jimX < spaceRockX+100:
+				print("ALSO X CROSS???!!!")
+				print("you ded")
+				pygame.mixer.music.pause()#stop music
+				gameDeathSurface(screen)#death screen
+				killSpaceRock()# and space rock positions
+				killCount = 0 #reset score
+
 
 		findRockLetter()
 		#print("spaceTypeLetter: " + spaceRockLetter)
