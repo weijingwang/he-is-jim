@@ -17,6 +17,7 @@ deskBG = pygame.image.load("assets/images/background/deskBG.png")
 inHouse = pygame.image.load("assets/images/background/inHouse.png")
 outHouse = pygame.image.load("assets/images/background/outHouse.png")
 end = pygame.image.load("assets/images/background/end.png")
+end_end = pygame.image.load("assets/images/background/end_end.png")
 doge = pygame.image.load("assets/images/doge.png")
 #Sound Effects
 
@@ -102,7 +103,12 @@ def gameOutro(surface):
                 sayWhatEnd = '"Okay", Jim said'
             if pictureCount ==16:
                 sayWhatEnd = 'And so, they went to the park to try some sandwiches freshness'
-            if pictureCount == 17:
+            if pictureCount ==17:
+                sayWhatEnd = 'Jim Thought to himself,"Wow, it sure is great to be in this world!"'
+            if pictureCount == 18:
+                sayWhatEnd = ""
+                backImage = end_end
+
                 #START ANIME SONG
                 pass
 
