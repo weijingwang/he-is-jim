@@ -190,7 +190,8 @@ def game(surface):
 
 		#requirements to pass level 1
 		if killCount == 35:
-			pass#LOAD BOSS LEVEL
+			bossScene(surface)
+			done = True
 
 		if jimY < spaceRockY+100:
 			print("y cross over")
@@ -226,24 +227,24 @@ def game(surface):
 
 def jumbiBoss(x,y,angery,surface):
 	if angery == True:
-		screen.blit(jumbi2,(x,y))
+		surface.blit(jumbi2,(x,y))
 	else:
-		screen.blit(jumbi1,(x,y))
+		surface.blit(jumbi1,(x,y))
 
-def bossScene():#short cutscene before actual boss fight
+def bossScene(surface):#short cutscene before actual boss fight
 	done = False
 	while not done:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
 			if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-				bossLevel()
+				bossLevel(surface)
 				done = True
-		screen.blit(bossSceneImage,(0,0))#background
+		surface.blit(bossSceneImage,(0,0))#background
 		pygame.display.update()
 
 #boss
-def bossLevel():
+def bossLevel(surface):
 	pygame.mixer.music.load("assets/music/tartaftac.mp3")#music
 	pygame.mixer.music.set_volume(0.5)
 	pygame.mixer.music.play(-1)
@@ -316,41 +317,46 @@ def bossLevel():
 				print("ALSO X CROSS???!!!")
 				print("you ded")
 				pygame.mixer.music.pause()#stop music
-				gameDeathSurface(screen)#death screen
+				gameDeathSurface(surface)#death screen
 				gameOverMusic.play()
 				print("play sound")
 				killSpaceRock()# and space rock positions
 				killCount = 0 #reset score
-				spaceRockSpeed = 9#speed reset		
+				spaceRockSpeed = 9#speed reset
+				jumbiY = -300		
 
 		if jumbiY > 800:
 			print("ALSO X CROSS???!!!")
 			print("you ded")
 			pygame.mixer.music.pause()#stop music
-			gameDeathSurface(screen)#death screen
+			jumbiY = -300 #reset jumbi Y
+			print (jumbiY)	
+			gameDeathSurface(surface)#death screen
 			gameOverMusic.play()
 			print("play sound")
 			killSpaceRock()# and space rock positions
 			killCount = 0 #reset score
 			spaceRockSpeed = 9#speed reset
-			jumbiY = -300 #reset jumbi Y	
 
-		screen.blit(gameBG3,(0,0))#background
+		surface.blit(gameBG3,(0,0))#background
 
 		jumbiSad = False#jumbi conditions
 
 		if killCount > 14:
 			jumbiSad = True
+		if killCount > 29:
+			print ("boss beat")
+			#end sequence
+			#done = True
+			quit()#for now
 
-		jumbiBoss(jumbiX,jumbiY,jumbiSad,screen)#objects
-		spaceRock(spaceRockX,spaceRockY,rockSprite,screen)
+		jumbiBoss(jumbiX,jumbiY,jumbiSad,surface)#objects
+		spaceRock(spaceRockX,spaceRockY,rockSprite,surface)
 		spaceRockY += spaceRockSpeed#make space rock move
 
-		jim(jimX,jimY,screen)
-		kill_count(killCount,screen)
+		jim(jimX,jimY,surface)
+		kill_count(killCount,surface)
 
 		jumbiY +=1
 		pygame.display.update()
-
-#bossLevel()
-
+		print(jumbiY)
