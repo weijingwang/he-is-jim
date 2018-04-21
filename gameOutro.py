@@ -26,7 +26,7 @@ doge = pygame.image.load("assets/images/doge.png")
 def playMusic():
     end_song = pygame.mixer.music.load("assets/music/Last_Hi.mp3")
     pygame.mixer.music.set_volume(0.5)
-    pygame.mixer.music.play(-1)
+    pygame.mixer.music.play(1)
 
 def gameEnd(surface):
     done = False
