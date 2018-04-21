@@ -3,9 +3,11 @@
 this is our pyweek 25 game
 Made By kylerchin and speedlimit35
 artwork and music made by speedlimit35
-voice acting bu kylerchin
+voice acting by kylerchin
 
 made with python 3 and pygame
+
+GNU AFFERO GENERAL PUBLIC LICENSE
 
 Download our pre-compiled packages on the releases page (totally nonezz virus)
 
