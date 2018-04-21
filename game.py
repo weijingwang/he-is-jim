@@ -295,5 +295,5 @@ def bossLevel():
 		jumbiBoss(jumbiX,jumbiY,False,screen)
 		jim(jimX,jimY,screen)
 		pygame.display.update()
-bossLevel()
+#bossLevel()
 
