@@ -204,25 +204,34 @@ def gameIntro(surface):
                 sayWhat = '...'
             elif pictureCount == 36:
                 sayWhat='doge does magic ritual DEFINITELY NOT EVIL'
+                playVoice(Scene36)
             elif pictureCount ==37:
                 character1 = jimVNBuff
                 sayWhat = 'WHA NANI HAPPEN!!??'
+                playVoice(Scene37)
             elif pictureCount == 38:
                 sayWhat = '"okok so you can fly cool yes?", doge explains'
+                playVoice(Scene38)
             elif pictureCount == 39:
                 sayWhat = '"But what is even cooler is if you fly to----"'
+                playVoice(Scene39)
             elif pictureCount == 40:
                 sayWhat = '"THE OTHER WORLD, so there are TWO WORLDS,"'
                 character2 = dogeLeft
+                playVoice(Scene40)
             elif pictureCount == 41:
                 sayWhat = '"I give you co-leader okok? BUT when flying to other world,"'
+                playVoice(Scene41)
             elif pictureCount == 42:
                 sayWhat = '"There are evil space rocks that might kill you."'
                 character2 == dogeRight
+                playVoice(Scene42)
             elif pictureCount == 43:
                 sayWhat = '"so what you wanna do is press keys on keyboard and kill space rocks yes?"'
+                playVoice(Scene43)
             elif pictureCount == 44:
                 sayWhat = '"All right I got it I am in", replied Jim with exitement'
+                playVoice(Scene44)
             elif pictureCount == 45:
                 jimX = 10000
                 dogeX = 10000
