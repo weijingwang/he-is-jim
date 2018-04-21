@@ -8,6 +8,9 @@ pygame.font.init()
 #screen
 x = 800
 y = 600
+
+screen = pygame.display.set_mode((x,y))
+
 black = ((0,0,0))
 gameBG1 = pygame.image.load("assets/images/background/stars1BG.png")
 gameBG2 = pygame.image.load("assets/images/background/stars2BG.png")
@@ -22,6 +25,8 @@ HRock = pygame.image.load("assets/images/rocks/HRock.png")
 DRock = pygame.image.load("assets/images/rocks/DRock.png")
 jumbi1 = pygame.image.load("assets/images/jumbiBoss.png")
 jumbi2 = pygame.image.load("assets/images/jumbiBoss1.png")
+bossSceneImage = pygame.image.load("assets/images/background/boss.png")
+
 spaceRockTypeNumber = random.randrange(0,6)
 musicOption = True
 
@@ -219,3 +224,76 @@ def game(surface):
 		pygame.display.update()
 #game()
 #spaceRockTypeNumber = random.randrange(0,6)
+
+def jumbiBoss(x,y,angery,surface):
+	if angery == True:
+		screen.blit(jumbi2,(x,y))
+	else:
+		screen.blit(jumbi1,(x,y))
+
+def bossScene():#short cutscene before actual boss fight
+	done = False
+	while not done:
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				quit()
+			if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+				bossLevel()
+				done = True
+		screen.blit(bossSceneImage,(0,0))#background
+		pygame.display.update()
+
+#boss
+def bossLevel():
+	global jumbiX
+	global jumbiY
+	global jimX
+	global jimY
+	jimX = 350
+	jimY = 470
+	jumbiX = 200
+	jumbiY = -300#slowly moves into view and when on bottom, you lose
+	spaceRockX = 0
+	spaceRockY = 0
+	spaceRockSpeed = 9
+	killCount = 0
+	enemyKillCount = 0
+	done = False
+
+	while not done:
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				quit()
+			if event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_a and spaceRockLetter == "A":
+					print ("a pressed")
+					killSpaceRock()
+				elif event.key == pygame.K_b and spaceRockLetter == "B":
+					print ("b pressed")
+					killSpaceRock()
+				elif event.key == pygame.K_c and spaceRockLetter == "C":
+					print ("c pressed")
+					killSpaceRock()
+				elif event.key == pygame.K_o and spaceRockLetter == "O":
+					print("o pressed")
+					killSpaceRock()
+				elif event.key == pygame.K_h and spaceRockLetter == "H":
+					print("h pressed")
+					killSpaceRock()
+				elif event.key == pygame.K_d and spaceRockLetter == "D":
+					print("D pressed")
+					killSpaceRock()
+
+		pressed = pygame.key.get_pressed()
+		if pressed[pygame.K_LEFT] and jimX>=0:
+			jimX-=7
+
+		if pressed[pygame.K_RIGHT] and jimX<=740:
+			jimX+=7
+
+		screen.blit(gameBG3,(0,0))#background
+		jumbiBoss(jumbiX,jumbiY,False,screen)
+		jim(jimX,jimY,screen)
+		pygame.display.update()
+bossLevel()
+
