@@ -20,16 +20,19 @@ end = pygame.image.load("assets/images/background/end.png")
 end_end = pygame.image.load("assets/images/background/end_end.png")
 doge = pygame.image.load("assets/images/doge.png")
 #Sound Effects
-
+help_package = pygame.mixer.Sound("assets/music/help-package.ogg")
     #if pictureCount >= 18:
 
 def playMusic():
     end_song = pygame.mixer.music.load("assets/music/Last_Hi.mp3")
 
 def gameEnd(surface):
+    SONG_END = pygame.USEREVENT + 1
+    pygame.mixer.music.set_endevent(SONG_END)
     done = False
     dogeX = -250#250
     dogeY = -200#200
+    sayWhatE = ""
     playMusic()
     pygame.mixer.music.set_volume(0.5)
     print("play sound")
@@ -39,8 +42,13 @@ def gameEnd(surface):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
+            if event.type == SONG_END:
+                print("help")
+                sayWhatE = "240-661-0307"
+                help_package.play()
         surface.blit(end_end,(0,0))
         surface.blit(doge,(dogeX,dogeY))
+        messageText(sayWhatE,50,550,20,surface,0,0,0,"ComicSans")
         pygame.display.update()
         if dogeX <= 250:
             dogeX+=1
@@ -143,8 +151,6 @@ def gameOutro(surface):
             sayWhatEnd = ""
             gameEnd(surface)
 
-            #START ANIME SONG
-            #240 661 0307
         surface.blit(backImage,(0,0))
         surface.blit(character1,(jimX,jimY))
         surface.blit(character2,(girlX,girlY))
