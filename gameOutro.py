@@ -22,33 +22,42 @@ doge = pygame.image.load("assets/images/doge.png")
 #Sound Effects
 help_package = pygame.mixer.Sound("assets/music/help-package.ogg")
     #if pictureCount >= 18:
+#font
+font = pygame.font.Font("assets/fonts/ComicSansMSRegular.ttf", 24)
 
 def playMusic():
     end_song = pygame.mixer.music.load("assets/music/Last_Hi.mp3")
 
 def gameEnd(surface):
-    SONG_END = pygame.USEREVENT + 1
-    pygame.mixer.music.set_endevent(SONG_END)
     done = False
     dogeX = -250#250
     dogeY = -200#200
-    sayWhatE = ""
+    sayWhatE = "Press Enter to skip"
+    phoneN = "240-661-0307"
+    myText = font.render(sayWhatE, True, (0, 0, 0))
+    myTextP = font.render(phoneN, True, (0, 0, 0))
+    print("play sound")
     playMusic()
     pygame.mixer.music.set_volume(0.5)
-    print("play sound")
-    pygame.mixer.music.play()
+    pygame.mixer.music.play(0)
+    phoneY = 800
     while not done:
         pygame.mixer.music.unpause()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
-            if event.type == SONG_END:
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+                pygame.mixer.music.stop()
+                phoneY = 500
                 print("help")
-                sayWhatE = "240-661-0307"
                 help_package.play()
+
+
         surface.blit(end_end,(0,0))
         surface.blit(doge,(dogeX,dogeY))
-        messageText(sayWhatE,50,550,20,surface,0,0,0,"ComicSans")
+        #print("show text")
+        surface.blit(myText,(0,0))
+        surface.blit(myTextP,(300,phoneY))
         pygame.display.update()
         if dogeX <= 250:
             dogeX+=1
