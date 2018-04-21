@@ -10,6 +10,7 @@ pygame.font.init()
 surface = pygame.display.set_mode((800,600))
 #images
 jimVNA = pygame.image.load("assets/images/jimVNA.png")
+jimVN = pygame.image.load("assets/images/jimVN.png")
 grill1 = pygame.image.load("assets/images/grill1.png")
 grill2 = pygame.image.load("assets/images/grill2.png")
 deskBG = pygame.image.load("assets/images/background/deskBG.png")
@@ -48,6 +49,7 @@ def gameOutro(surface):
                 pass
 
             if pictureCount == 0:
+                sayWhatEnd = ""
                 backImage = deskBG
                 jimX = 0
                 jimY = 50
@@ -78,7 +80,31 @@ def gameOutro(surface):
             if pictureCount ==9:
                 character2 = grill2
                 sayWhat = '"IN ORDER TO TALK ABOUT OUR FEELINGS FOR ONE AND A HALF HOUR!"'
-
+            if pictureCount ==10:
+                sayWhat = '"Oh shoot! I almost forgot! yeah... i was too busy playing this game about frogs..."'
+            if pictureCount ==11:
+                character1 = jimVN
+                dogeX = -100
+                dogeY = 500
+                sayWhat ='"called... I-I-I was trying to get the br-rown frog..", Jim said quickly'
+            if pictureCount == 12:
+                sayWhat='"do you like apple green onion sandwiches?, Sarah asked Jim"'
+            if pictureCount ==13:
+                sayWhat = '"I think they are pretty tasty garden"'
+            if pictureCount == 14:
+                sayWhat = ""
+                jimX = 10000
+                girlX = 10000
+                dogeX = 10000
+                backImage = end
+                sayWhatEnd = '"Tiens! Lets go to the park! I made some of those sandwiches!"'
+            if pictureCount == 15:
+                sayWhatEnd = '"Okay", Jim said'
+            if pictureCount ==16:
+                sayWhatEnd = 'And so, they went to the park to try some sandwiches freshness'
+            if pictureCount == 17:
+                #START ANIME SONG
+                pass
 
 
 
@@ -87,5 +113,6 @@ def gameOutro(surface):
         surface.blit(character2,(girlX,girlY))
         surface.blit(character3,(dogeX,dogeY))
         messageText(sayWhat,50,550,20,surface,255,255,255,"Roboto")
+        messageText(sayWhatEnd,50,550,20,surface,0,0,0,"Roboto")
         pygame.display.update()
 gameOutro(surface)
