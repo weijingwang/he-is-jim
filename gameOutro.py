@@ -7,28 +7,33 @@ pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
 
-
+surface = pygame.display.set_mode((800,600))
 #images
-jimVNA = pygame.image.load("assets/images/jimVN.png")
+jimVNA = pygame.image.load("assets/images/jimVNA.png")
+jimVN = pygame.image.load("assets/images/jimVN.png")
 grill1 = pygame.image.load("assets/images/grill1.png")
 grill2 = pygame.image.load("assets/images/grill2.png")
+deskBG = pygame.image.load("assets/images/background/deskBG.png")
+inHouse = pygame.image.load("assets/images/background/inHouse.png")
+outHouse = pygame.image.load("assets/images/background/outHouse.png")
+end = pygame.image.load("assets/images/background/end.png")
+end_end = pygame.image.load("assets/images/background/end_end.png")
+doge = pygame.image.load("assets/images/doge.png")
 #Sound Effects
 
 
-
-def playVoice(whichVoice):
-    pygame.mixer.stop()
-    whichVoice.play()
-
-def gameIntro(surface):
+def gameOutro(surface):
     done = False
     pictureCount = 0
     pictureNumber = 10
     backImage = deskBG
-    character1 = jimVN
+    character1 = jimVNA
     jimX = 0
     jimY = 50
-    character2 = dogeRight
+    character2 = grill1
+    girlX = 10000
+    girlY = 0
+    character3 = doge
     dogeX = 100000
     dogeY = 0
     sayWhat = None
@@ -45,158 +50,75 @@ def gameIntro(surface):
                 pass
 
             if pictureCount == 0:
-                playVoice(Scene0)
+                sayWhatEnd = ""
                 backImage = deskBG
                 jimX = 0
                 jimY = 50
-                sayWhat = 'Press Space and make sure to not move the mouse or press any other buttons'
-            elif pictureCount == 1:
-                playVoice(Scene1)
-                sayWhat = 'This is Jim. After High School, he somehow decided to be a hardcore gamer boy'
-
-            elif pictureCount == 2:
-                playVoice(Scene2)
-                sayWhat = 'and now plays the game "Frogs in the Night" every day.'
-            elif pictureCount == 3:
-                sayWhat = 'Jim is lonely and the only "friends" he has are on the internet.'
-                playVoice(Scene3)
-            elif pictureCount == 4:
-                sayWhat = 'Today, there is a special event in "Frogs in the Night"'
-                playVoice(Scene4)
-            elif pictureCount == 5:
-                sayWhat = ' and he plans to spend his entire day ingame.'
-                playVoice(Scene5)
-            elif pictureCount ==6:
-                jimX = 500
-                sayWhat = '"Must g-g-get the b-b-rownn frog-g-g", says Jim,'
-                playVoice(Scene6)
-            elif pictureCount ==7:
-                sayWhat = '"need to win the g-game..."'
-                playVoice(Scene7)
-            elif pictureCount ==8:
-                sayWhat = '...'
-                jimX = 1000
-                backImage = computerBG
-            elif pictureCount == 9:
-                sayWhat = '"oh no... I have the case of the lose!"'
-                playVoice(Scene9)
-            elif pictureCount == 10:
-                sayWhat = '"will NOT lose but can?"'
-                playVoice(Scene10)
-            elif pictureCount == 11:
-                sayWhat = '...'
-            elif pictureCount == 12:
-                sayWhat = '. ..'
-            elif pictureCount == 13:
-                sayWhat = '.. .'
-            elif pictureCount == 14:
-                sayWhat = '...'
-            elif pictureCount == 15:
-                dogeX = 100
-                dogeY = 100
-                playVoice(Scene15)
-                sayWhat = 'WOOOWWWZZZ'
-            elif pictureCount == 16:
-                playVoice(Scene16)
-                sayWhat = '"WHAHAHAHATATATATAT GET OFF MY KEYBOARD", Jim shouted'
-            elif pictureCount == 17:
-                playVoice(Scene17)
-                sayWhat = '"I AM GOING TO LOSE THE GAME WHAT THE HECK"'
-            elif pictureCount ==18:
-                playVoice(Scene18)
-                character2 = dogeLeft
-                sayWhat = '"No...", said the magic doge'
-            elif pictureCount ==19:
-                playVoice(Scene19)
-                sayWhat = '"watch this my man"'
-            elif pictureCount ==20:
-                dogeY = 10
-            elif pictureCount == 21:
-                dogeY = 70
-            elif pictureCount == 22:
-                playVoice(Scene22)
-                sayWhat = 'the magic doge is secret coder'
-            elif pictureCount == 23:
-                playVoice(Scene23)
-                sayWhat = 'and he typed: "wafuinwoq39df'
-            elif pictureCount == 24:
-                playVoice(Scene24)
-                sayWhat = '"Boohoo hoo, no i will never win", said Jim as he raised his head'
-            elif pictureCount ==25:
-                playVoice(Scene25)
-                sayWhat = '"NANI IS HAPPEN!?", Jim Shouted as he looked at his monitor'
-                jimX = 500
-                character2 = dogeRight
-                dogeX = 70
-            elif pictureCount == 26:
-                playVoice(Scene26)
-                sayWhat ='"You..YY.YOU maake mmee wi-wi-w-win game!", Jim mumbled in amazement'
-            elif pictureCount ==27:
-                backImage =deskBG
-                dogeX = -110
-                sayWhat = "Jim is stunned and decides to become Doge's first worshipper"
-                playVoice(Scene27)
-            elif pictureCount ==28:
-                sayWhat = '"here is one of my favorite cookies, here try one", Jim says to the doge'
-                playVoice(Scene28)
-            elif pictureCount ==29:
-                sayWhat = '"No thanks, maybe next time", the magic Doge replied.'
-                playVoice(Scene29)
-            elif pictureCount == 30:
-                sayWhat = '"no problemo", said the Jim'
-                playVoice(Scene30)
-            elif pictureCount == 31:
-                sayWhat = '"By the way thanks for becoming my first follower",doge said'
-                playVoice(Scene31)
-            elif pictureCount ==32:
-                sayWhat = '"much thank much wowzies"'
-                playVoice(Scene32)
-            elif pictureCount ==33:
-                sayWhat = '"Oh, I know! wanna see something cool?"'
-                playVoice(Scene33)
-            elif pictureCount == 34:
-                sayWhat = '"sure what is???", Jim say again with curiousity'
-                #FitN surface
-            elif pictureCount ==35:
-                sayWhat = '...'
-            elif pictureCount == 36:
-                sayWhat='doge does magic ritual DEFINITELY NOT EVIL'
-            elif pictureCount ==37:
-                character1 = jimVNBuff
-                sayWhat = 'WHA NANI HAPPEN!!??'
-            elif pictureCount == 38:
-                sayWhat = '"okok so you can fly cool yes?", doge explains'
-            elif pictureCount == 39:
-                sayWhat = '"But what is even cooler is if you fly to----"'
-            elif pictureCount == 40:
-                sayWhat = '"THE OTHER WORLD, so there are TWO WORLDS,"'
-                character2 = dogeLeft
-            elif pictureCount == 41:
-                sayWhat = '"I give you co-leader okok? BUT when flying to other world,"'
-            elif pictureCount == 42:
-                sayWhat = '"There are evil space rocks that might kill you."'
-                character2 == dogeRight
-            elif pictureCount == 43:
-                sayWhat = '"so what you wanna do is press keys on keyboard and kill space rocks yes?"'
-            elif pictureCount == 44:
-                sayWhat = '"All right I got it I am in", replied Jim with exitement'
-            elif pictureCount == 45:
-                jimX = 10000
+                sayWhat = '"I am in other world???",Jim said'
+                dogeX = 500
+            if pictureCount == 1:
+                sayWhat = '"and i dont have fly power anymore? I still won game though..."'
+            if pictureCount == 2:
+                sayWhat = '"I think I am going to go outside..."'
+            if pictureCount == 3:
                 dogeX = 10000
-                backImage = farewell
-                sayWhat = 'And so Jim flew away to see if he could reach the second world and get co-leader'
-                playVoice(Scene45)
-            elif pictureCount == 46:
-                sayWhat = 'Go Jim! Good Luck Jim! Let us see if you are cool enough to join the kool klub!'
-                playVoice(Scene46)
-            elif pictureCount == 47:
-                pygame.mixer.music.stop()
-                pygame.mixer.music.load("assets/music/HopeForADog.mp3")
-                pygame.mixer.music.set_volume(0.5)
-                pygame.mixer.music.play(-1)
-                game(surface) # don't add yet since still developing
+                backImage = inHouse
+                sayWhat = 'Jim heads to the door and as he opens the door,'
+            if pictureCount == 4:
+                sayWhat = ' a bright light starts to fill the room'
+            if pictureCount ==5:
+                sayWhat = 'Jim exits the house'
+            if pictureCount ==6:
+                backImage = outHouse
+                sayWhat = '!!!'
+                jimX = -100
+                girlX = 600
+                girlY = 100
+            if pictureCount ==7:
+                sayWhat = '"Oh hi Jim", Sarah said'
+            if pictureCount == 8:
+                sayWhat = '"I was just waiting for you to have A NICE LONG CHAT"'
+            if pictureCount ==9:
+                character2 = grill2
+                sayWhat = '"IN ORDER TO TALK ABOUT OUR FEELINGS FOR ONE AND A HALF HOUR!"'
+            if pictureCount ==10:
+                sayWhat = '"Oh shoot! I almost forgot! yeah... i was too busy playing this game about frogs..."'
+            if pictureCount ==11:
+                character1 = jimVN
+                dogeX = -100
+                dogeY = 500
+                sayWhat ='"called... I-I-I was trying to get the br-rown frog..", Jim said quickly'
+            if pictureCount == 12:
+                sayWhat='"do you like apple green onion sandwiches?, Sarah asked Jim"'
+            if pictureCount ==13:
+                sayWhat = '"I think they are pretty tasty garden"'
+            if pictureCount == 14:
+                sayWhat = ""
+                jimX = 10000
+                girlX = 10000
+                dogeX = 10000
+                backImage = end
+                sayWhatEnd = '"Tiens! Lets go to the park! I made some of those sandwiches!"'
+            if pictureCount == 15:
+                sayWhatEnd = '"Okay", Jim said'
+            if pictureCount ==16:
+                sayWhatEnd = 'And so, they went to the park to try some sandwiches freshness'
+            if pictureCount ==17:
+                sayWhatEnd = 'Jim Thought to himself,"Wow, it sure is great to be in this world!"'
+            if pictureCount == 18:
+                sayWhatEnd = ""
+                backImage = end_end
+
+                #START ANIME SONG
+                pass
+
+
+
         surface.blit(backImage,(0,0))
         surface.blit(character1,(jimX,jimY))
-        surface.blit(character2,(dogeX,dogeY))
+        surface.blit(character2,(girlX,girlY))
+        surface.blit(character3,(dogeX,dogeY))
         messageText(sayWhat,50,550,20,surface,255,255,255,"Roboto")
+        messageText(sayWhatEnd,50,550,20,surface,0,0,0,"Roboto")
         pygame.display.update()
+gameOutro(surface)
