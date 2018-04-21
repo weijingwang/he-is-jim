@@ -30,11 +30,6 @@ bossSceneImage = pygame.image.load("assets/images/background/boss.png")
 spaceRockTypeNumber = random.randrange(0,6)
 musicOption = True
 
-#music
-# pygame.mixer.music.load("assets/music/HopeForADog.mp3")
-# pygame.mixer.music.set_volume(0.5)
-# pygame.mixer.music.play(-1)
-
 #sound
 
 #objects
@@ -117,6 +112,9 @@ def killSpaceRock():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 def game(surface):
+	pygame.mixer.music.load("assets/music/HopeForADog.mp3")
+	pygame.mixer.music.set_volume(0.5)
+	pygame.mixer.music.play(-1)
 	print("GAME")
 	global jimX
 	global jimY
@@ -246,11 +244,15 @@ def bossScene():#short cutscene before actual boss fight
 
 #boss
 def bossLevel():
+	pygame.mixer.music.load("assets/music/tartaftac.mp3")#music
+	pygame.mixer.music.set_volume(0.5)
+	pygame.mixer.music.play(-1)
+
 	print ("BOSS LEVEL")
 	jimX = 350
 	jimY = 470
 	jumbiX = 200
-	jumbiY = -200#slowly moves into view and when on bottom, you lose
+	jumbiY = -300#slowly moves into view and when on bottom, you lose
 	global spaceRockX
 	global spaceRockY
 	global spaceRockSpeed
@@ -263,7 +265,11 @@ def bossLevel():
 	done = False
 	spaceRockTypeNumber = random.randrange(0,6)
 
+	pygame.mixer.music.set_volume(0.5)
+	pygame.mixer.music.play(-1)
 	while not done:
+		pygame.mixer.stop()#stop death sound
+		pygame.mixer.music.unpause()#background music always unpaused but when death
 		findRockLetter()
 		if (spaceRockY > 600):
 			print("Rock below")
@@ -317,15 +323,34 @@ def bossLevel():
 				killCount = 0 #reset score
 				spaceRockSpeed = 9#speed reset		
 
+		if jumbiY > 800:
+			print("ALSO X CROSS???!!!")
+			print("you ded")
+			pygame.mixer.music.pause()#stop music
+			gameDeathSurface(screen)#death screen
+			gameOverMusic.play()
+			print("play sound")
+			killSpaceRock()# and space rock positions
+			killCount = 0 #reset score
+			spaceRockSpeed = 9#speed reset
+			jumbiY = -300 #reset jumbi Y	
+
 		screen.blit(gameBG3,(0,0))#background
 
-		jumbiBoss(jumbiX,jumbiY,False,screen)#objects
+		jumbiSad = False#jumbi conditions
+
+		if killCount > 14:
+			jumbiSad = True
+
+		jumbiBoss(jumbiX,jumbiY,jumbiSad,screen)#objects
 		spaceRock(spaceRockX,spaceRockY,rockSprite,screen)
 		spaceRockY += spaceRockSpeed#make space rock move
 
 		jim(jimX,jimY,screen)
 		kill_count(killCount,screen)
+
+		jumbiY +=1
 		pygame.display.update()
 
-bossLevel()
+#bossLevel()
 
