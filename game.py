@@ -2,6 +2,7 @@ import pygame
 import random
 from displayText import *
 from gameDeath import *
+from gameOutro import *
 pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
@@ -346,9 +347,8 @@ def bossLevel(surface):
 			jumbiSad = True
 		if killCount > 29:
 			print ("boss beat")
-			#end sequence
-			#done = True
-			quit()#for now
+			gameOutro(surface)
+			done = True
 
 		jumbiBoss(jumbiX,jumbiY,jumbiSad,surface)#objects
 		spaceRock(spaceRockX,spaceRockY,rockSprite,surface)

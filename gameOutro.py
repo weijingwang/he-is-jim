@@ -7,7 +7,6 @@ pygame.mixer.pre_init()
 pygame.init()
 pygame.font.init()
 
-surface = pygame.display.set_mode((800,600))
 #images
 jimVNA = pygame.image.load("assets/images/jimVNA.png")
 jimVN = pygame.image.load("assets/images/jimVN.png")
