@@ -38,6 +38,8 @@ Scene24 = pygame.mixer.Sound("assets/music/introVoice/24.ogg")
 Scene25 = pygame.mixer.Sound("assets/music/introVoice/25.ogg")
 Scene26 = pygame.mixer.Sound("assets/music/introVoice/26.ogg")
 Scene27 = pygame.mixer.Sound("assets/music/introVoice/27.ogg")
+Scene28 = pygame.mixer.Sound("assets/music/introVoice/28.ogg")
+Scene29 = pygame.mixer.Sound("assets/music/introVoice/29.ogg")
 Scene45 = pygame.mixer.Sound("assets/music/introVoice/45.ogg")
 Scene46 = pygame.mixer.Sound("assets/music/introVoice/46.ogg")
 
@@ -164,8 +166,10 @@ def gameIntro(surface):
                 playVoice(Scene27)
             elif pictureCount ==28:
                 sayWhat = '"here is one of my favorite cookies, here try one", Jim says to the doge'
+                playVoice(Scene28)
             elif pictureCount ==29:
                 sayWhat = '"No thanks, maybe next time", the magic Doge replied.'
+                playVoice(Scene29)
             elif pictureCount == 30:
                 sayWhat = '"no problemo", said the Jim'
             elif pictureCount == 31:
