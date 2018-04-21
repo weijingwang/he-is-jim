@@ -117,6 +117,7 @@ def killSpaceRock():
 	spaceRockTypeNumber = random.randrange(0,6)
 
 def game(surface):
+	print("GAME")
 	global jimX
 	global jimY
 	global spaceRockX
@@ -245,22 +246,34 @@ def bossScene():#short cutscene before actual boss fight
 
 #boss
 def bossLevel():
-	global jumbiX
-	global jumbiY
-	global jimX
-	global jimY
+	print ("BOSS LEVEL")
 	jimX = 350
 	jimY = 470
 	jumbiX = 200
-	jumbiY = -300#slowly moves into view and when on bottom, you lose
+	jumbiY = -200#slowly moves into view and when on bottom, you lose
+	global spaceRockX
+	global spaceRockY
+	global spaceRockSpeed
+	global killCount
 	spaceRockX = 0
 	spaceRockY = 0
 	spaceRockSpeed = 9
 	killCount = 0
 	enemyKillCount = 0
 	done = False
+	spaceRockTypeNumber = random.randrange(0,6)
 
 	while not done:
+		findRockLetter()
+		if (spaceRockY > 600):
+			print("Rock below")
+			killCount -= 1 #score penalty if no kill
+			spaceRockY = 0 - 100
+			spaceRockX = random.randrange(0,700)
+			spaceRockSpeed += 1
+			spaceRockTypeNumber = random.randrange(0,6)
+			print(spaceRockTypeNumber)
+			findRockLetter()
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
@@ -291,9 +304,28 @@ def bossLevel():
 		if pressed[pygame.K_RIGHT] and jimX<=740:
 			jimX+=7
 
+		if jimY < spaceRockY+100:
+			print("y cross over")
+			if jimX>spaceRockX and jimX < spaceRockX+100:
+				print("ALSO X CROSS???!!!")
+				print("you ded")
+				pygame.mixer.music.pause()#stop music
+				gameDeathSurface(screen)#death screen
+				gameOverMusic.play()
+				print("play sound")
+				killSpaceRock()# and space rock positions
+				killCount = 0 #reset score
+				spaceRockSpeed = 9#speed reset		
+
 		screen.blit(gameBG3,(0,0))#background
-		jumbiBoss(jumbiX,jumbiY,False,screen)
+
+		jumbiBoss(jumbiX,jumbiY,False,screen)#objects
+		spaceRock(spaceRockX,spaceRockY,rockSprite,screen)
+		spaceRockY += spaceRockSpeed#make space rock move
+
 		jim(jimX,jimY,screen)
+		kill_count(killCount,screen)
 		pygame.display.update()
-#bossLevel()
+
+bossLevel()
 
