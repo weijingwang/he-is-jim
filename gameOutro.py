@@ -69,6 +69,7 @@ def gameEnd(surface):
             dogeY+=0
 
 def gameOutro(surface):
+    pygame.mixer.music.stop()
     sayWhatEnd = ""
 
     global pictureCount
