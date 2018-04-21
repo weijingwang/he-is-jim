@@ -37,6 +37,7 @@ Scene23 = pygame.mixer.Sound("assets/music/introVoice/23.ogg")
 Scene24 = pygame.mixer.Sound("assets/music/introVoice/24.ogg")
 Scene25 = pygame.mixer.Sound("assets/music/introVoice/25.ogg")
 Scene26 = pygame.mixer.Sound("assets/music/introVoice/26.ogg")
+Scene27 = pygame.mixer.Sound("assets/music/introVoice/27.ogg")
 Scene45 = pygame.mixer.Sound("assets/music/introVoice/45.ogg")
 Scene46 = pygame.mixer.Sound("assets/music/introVoice/46.ogg")
 
@@ -160,6 +161,7 @@ def gameIntro(surface):
                 backImage =deskBG
                 dogeX = -110
                 sayWhat = "Jim is stunned and decides to become Doge's first worshipper"
+                playVoice(Scene27)
             elif pictureCount ==28:
                 sayWhat = '"here is one of my favorite cookies, here try one", Jim says to the doge'
             elif pictureCount ==29:
