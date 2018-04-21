@@ -35,6 +35,8 @@ Scene19 = pygame.mixer.Sound("assets/music/introVoice/19.ogg")
 Scene22 = pygame.mixer.Sound("assets/music/introVoice/22.ogg")
 Scene23 = pygame.mixer.Sound("assets/music/introVoice/23.ogg")
 Scene24 = pygame.mixer.Sound("assets/music/introVoice/24.ogg")
+Scene25 = pygame.mixer.Sound("assets/music/introVoice/25.ogg")
+Scene26 = pygame.mixer.Sound("assets/music/introVoice/26.ogg")
 Scene45 = pygame.mixer.Sound("assets/music/introVoice/45.ogg")
 Scene46 = pygame.mixer.Sound("assets/music/introVoice/46.ogg")
 
@@ -146,11 +148,13 @@ def gameIntro(surface):
                 playVoice(Scene24)
                 sayWhat = '"Boohoo hoo, no i will never win", said Jim as he raised his head'
             elif pictureCount ==25:
+                playVoice(Scene25)
                 sayWhat = '"NANI IS HAPPEN!?", Jim Shouted as he looked at his monitor'
                 jimX = 500
                 character2 = dogeRight
                 dogeX = 70
             elif pictureCount == 26:
+                playVoice(Scene26)
                 sayWhat ='"You..YY.YOU maake mmee wi-wi-w-win game!", Jim mumbled in amazement'
             elif pictureCount ==27:
                 backImage =deskBG
