@@ -1,6 +1,11 @@
 # he-is-jim
 #嗨嗨嗨 歡迎光臨
 this is our pyweek 25 game
+Made By kylerchin and speedlimit35
+artwork and music made by speedlimit35
+voice acting bu kylerchin
+
+made with python 3 and pygame
 
 Download our pre-compiled packages on the releases page (totally nonezz virus)
 
