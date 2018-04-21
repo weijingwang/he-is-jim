@@ -166,4 +166,3 @@ def gameOutro(surface):
         messageText(sayWhat,50,550,20,surface,255,255,255,"Roboto")
         messageText(sayWhatEnd,50,550,20,surface,0,0,0,"Roboto")
         pygame.display.update()
-gameOutro(surface)
