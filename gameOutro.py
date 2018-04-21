@@ -25,15 +25,17 @@ doge = pygame.image.load("assets/images/doge.png")
 
 def playMusic():
     end_song = pygame.mixer.music.load("assets/music/Last_Hi.mp3")
-    pygame.mixer.music.set_volume(0.5)
-    pygame.mixer.music.play(1)
 
 def gameEnd(surface):
     done = False
     dogeX = -250#250
     dogeY = -200#200
     playMusic()
+    pygame.mixer.music.set_volume(0.5)
+    print("play sound")
+    pygame.mixer.music.play()
     while not done:
+        pygame.mixer.music.unpause()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
@@ -137,7 +139,7 @@ def gameOutro(surface):
             sayWhatEnd = 'And so, they went to the park to try some sandwiches freshness'
         if pictureCount ==17:
             sayWhatEnd = 'Jim Thought to himself,"Wow, it sure is great to be in this world!"'
-        if pictureCount >= 18:
+        if pictureCount > 17:
             sayWhatEnd = ""
             gameEnd(surface)
 
