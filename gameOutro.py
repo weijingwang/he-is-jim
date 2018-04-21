@@ -15,6 +15,7 @@ grill2 = pygame.image.load("assets/images/grill2.png")
 deskBG = pygame.image.load("assets/images/background/deskBG.png")
 inHouse = pygame.image.load("assets/images/background/inHouse.png")
 outHouse = pygame.image.load("assets/images/background/outHouse.png")
+end = pygame.image.load("assets/images/background/end.png")
 doge = pygame.image.load("assets/images/doge.png")
 #Sound Effects
 
@@ -70,6 +71,13 @@ def gameOutro(surface):
                 jimX = -100
                 girlX = 600
                 girlY = 100
+            if pictureCount ==7:
+                sayWhat = '"Oh hi Jim", Sarah said'
+            if pictureCount == 8:
+                sayWhat = '"I was just waiting for you to have A NICE LONG CHAT"'
+            if pictureCount ==9:
+                character2 = grill2
+                sayWhat = '"IN ORDER TO TALK ABOUT OUR FEELINGS FOR ONE AND A HALF HOUR!"'
 
 
 
