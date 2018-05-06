@@ -16,7 +16,7 @@ First, download all the requirements
 ```pip3 install -r requirements.txt```
 
 Run the program!
-```python3 main_menu.py```
+```python3 main.py```
 
 To self package:
 ```pyinstaller```
